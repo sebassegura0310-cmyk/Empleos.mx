@@ -12,7 +12,7 @@
    El botón final abrirá esa dirección.
 */
 
-const ENLACE_FINAL = "https://o.uvixs.com//tr?offer_id=59&aff_id=14";
+const ENLACE_FINAL = "https://o.uvixs.com//tr?offer_id=1&aff_id=14";
 
 
 /* =========================================
