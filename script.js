@@ -1,198 +1,116 @@
-/* =====================================
-   CONFIGURACIÓN
-===================================== */
+/* =========================================
+   CONFIGURACIÓN DEL ENLACE FINAL
+========================================= */
 
 /*
-   CAMBIA ESTA URL POR EL DESTINO
-   LEGÍTIMO QUE QUIERAS UTILIZAR.
+   CAMBIA SOLAMENTE ESTA DIRECCIÓN.
 
    Ejemplo:
 
    const ENLACE_FINAL = "https://ejemplo.com";
 
+   El botón final abrirá esa dirección.
 */
 
 const ENLACE_FINAL = "https://example.com";
 
 
-/* =====================================
-   MOSTRAR UNA PANTALLA
-===================================== */
+/* =========================================
+   CAMBIAR DE PASO
+========================================= */
 
-function mostrarPaso(numero) {
+function irAPaso(numero) {
 
+    // Ocultar todas las pantallas
     const pantallas = document.querySelectorAll(".pantalla");
 
     pantallas.forEach(function(pantalla) {
-
         pantalla.classList.remove("activa");
-
     });
 
 
-    const siguiente = document.getElementById(
-        "paso" + numero
+    // Buscar la pantalla correspondiente
+    const destino = document.getElementById(
+        "paso-" + numero
     );
 
 
-    if (siguiente) {
+    // Mostrarla
+    if (destino) {
 
-        siguiente.classList.add("activa");
+        destino.classList.add("activa");
 
+        // Volver arriba
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
-
     }
-
 }
 
 
-/* =====================================
-   BOTÓN DEL FORMULARIO
-===================================== */
+/* =========================================
+   FORMULARIO DE DEMOSTRACIÓN
+========================================= */
 
-function continuarFormulario() {
+const formulario = document.getElementById("form-demo");
 
-    const nombre =
-        document.getElementById("nombre").value.trim();
+if (formulario) {
 
-    const telefono =
-        document.getElementById("telefono").value.trim();
+    formulario.addEventListener("submit", function(event) {
 
-    const ciudad =
-        document.getElementById("ciudad").value.trim();
+        // Evita que el navegador envíe el formulario
+        event.preventDefault();
 
+        // NO se envían los datos a ningún servidor.
+        // Solo avanzamos a la siguiente pantalla.
 
-    /*
-       Estos datos solo se utilizan para comprobar
-       que los campos no estén vacíos.
-
-       NO se envían a ningún servidor.
-    */
-
-
-    if (nombre === "") {
-
-        alert("Por favor escribe tu nombre.");
-
-        document.getElementById("nombre").focus();
-
-        return;
-    }
-
-
-    if (telefono === "") {
-
-        alert("Por favor escribe tu teléfono.");
-
-        document.getElementById("telefono").focus();
-
-        return;
-    }
-
-
-    if (ciudad === "") {
-
-        alert("Por favor escribe tu ciudad.");
-
-        document.getElementById("ciudad").focus();
-
-        return;
-    }
-
-
-    mostrarPaso(3);
+        irAPaso(2);
+    });
 }
 
 
-/* =====================================
-   ENTREVISTA
-===================================== */
+/* =========================================
+   BOTÓN FINAL
+========================================= */
 
-function continuarEntrevista() {
-
-    const fecha =
-        document.getElementById("fecha").value.trim();
-
-    const hora =
-        document.getElementById("hora").value.trim();
-
-
-    if (fecha === "") {
-
-        alert("Por favor indica una fecha.");
-
-        document.getElementById("fecha").focus();
-
-        return;
-    }
-
-
-    if (hora === "") {
-
-        alert("Por favor indica una hora.");
-
-        document.getElementById("hora").focus();
-
-        return;
-    }
-
-
-    mostrarPaso(5);
-}
-
-
-/* =====================================
-   BOTÓN DEL ENCABEZADO
-===================================== */
-
-function irAlInicio() {
-
-    mostrarPaso(1);
-
-}
-
-
-/* =====================================
-   ENLACE FINAL
-===================================== */
-
-function irAlEnlace() {
-
-    /*
-       El botón solamente dirige al enlace
-       configurado arriba.
-    */
+function abrirEnlaceFinal() {
 
     if (
-        ENLACE_FINAL === "" ||
-        ENLACE_FINAL === "https://example.com"
+        ENLACE_FINAL &&
+        ENLACE_FINAL !== "https://example.com"
     ) {
 
+        window.location.href = ENLACE_FINAL;
+
+    } else {
+
         alert(
-            "Configura primero ENLACE_FINAL en script.js."
+            "Configura primero ENLACE_FINAL en el archivo script.js."
         );
-
-        return;
     }
-
-
-    window.location.href = ENLACE_FINAL;
-
 }
 
 
-/* =====================================
-   INICIO
-===================================== */
+/* =========================================
+   FECHA MÍNIMA
+========================================= */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function() {
+const fecha = document.getElementById("fecha");
 
-        mostrarPaso(1);
+if (fecha) {
 
-    }
-);
+    const hoy = new Date();
+
+    const año = hoy.getFullYear();
+
+    const mes = String(
+        hoy.getMonth() + 1
+    ).padStart(2, "0");
+
+    const dia = String(
+        hoy.getDate()
+    ).padStart(2, "0");
+
+    fecha.min = `${año}-${mes}-${dia}`;
+}
