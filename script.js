@@ -1,198 +1,198 @@
+/* =====================================
+   CONFIGURACIÓN
+===================================== */
+
 /*
-====================================================
-CONFIGURACIÓN DEL ENLACE FINAL
-====================================================
+   CAMBIA ESTA URL POR EL DESTINO
+   LEGÍTIMO QUE QUIERAS UTILIZAR.
 
-CAMBIA ESTA DIRECCIÓN POR EL ENLACE LEGÍTIMO
-AL QUE QUIERAS DIRIGIR AL USUARIO.
+   Ejemplo:
 
-Ejemplo:
-
-const ENLACE_FINAL = "https://tusitio.com/";
+   const ENLACE_FINAL = "https://ejemplo.com";
 
 */
 
-const ENLACE_FINAL = "https://example.com/";
+const ENLACE_FINAL = "https://example.com";
 
 
+/* =====================================
+   MOSTRAR UNA PANTALLA
+===================================== */
 
-/*
-====================================================
-CONTROL DE PASOS
-====================================================
-*/
+function mostrarPaso(numero) {
 
-const pasos = document.querySelectorAll(".step");
+    const pantallas = document.querySelectorAll(".pantalla");
 
-let pasoActual = 0;
+    pantallas.forEach(function(pantalla) {
 
+        pantalla.classList.remove("activa");
 
-
-/*
-====================================================
-MOSTRAR PASO
-====================================================
-*/
-
-function irAlPaso(numero) {
-
-  if (numero < 0) {
-    numero = 0;
-  }
-
-  if (numero >= pasos.length) {
-    numero = pasos.length - 1;
-  }
+    });
 
 
-  pasos.forEach(function(paso, indice) {
+    const siguiente = document.getElementById(
+        "paso" + numero
+    );
 
-    if (indice === numero) {
 
-      paso.classList.add("active");
+    if (siguiente) {
 
-    } else {
+        siguiente.classList.add("activa");
 
-      paso.classList.remove("active");
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
     }
 
-  });
-
-
-  pasoActual = numero;
-
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-
 }
 
 
+/* =====================================
+   BOTÓN DEL FORMULARIO
+===================================== */
 
-/*
-====================================================
-FORMULARIO
-====================================================
-*/
+function continuarFormulario() {
 
-function continuarDesdeFormulario() {
+    const nombre =
+        document.getElementById("nombre").value.trim();
 
-  const nombre =
-    document.getElementById("nombre").value.trim();
+    const telefono =
+        document.getElementById("telefono").value.trim();
 
-  const telefono =
-    document.getElementById("telefono").value.trim();
-
-  const ciudad =
-    document.getElementById("ciudad").value.trim();
+    const ciudad =
+        document.getElementById("ciudad").value.trim();
 
 
-  if (
-    nombre === "" ||
-    telefono === "" ||
-    ciudad === ""
-  ) {
+    /*
+       Estos datos solo se utilizan para comprobar
+       que los campos no estén vacíos.
 
-    alert(
-      "Completa todos los campos para continuar."
-    );
-
-    return;
-
-  }
+       NO se envían a ningún servidor.
+    */
 
 
-  /*
-  IMPORTANTE:
+    if (nombre === "") {
 
-  Los datos solamente se utilizan
-  para validar que los campos no estén vacíos.
+        alert("Por favor escribe tu nombre.");
 
-  No se envían a ningún servidor.
-  */
+        document.getElementById("nombre").focus();
+
+        return;
+    }
 
 
-  irAlPaso(2);
+    if (telefono === "") {
 
+        alert("Por favor escribe tu teléfono.");
+
+        document.getElementById("telefono").focus();
+
+        return;
+    }
+
+
+    if (ciudad === "") {
+
+        alert("Por favor escribe tu ciudad.");
+
+        document.getElementById("ciudad").focus();
+
+        return;
+    }
+
+
+    mostrarPaso(3);
 }
 
 
-
-/*
-====================================================
-ENTREVISTA
-====================================================
-*/
+/* =====================================
+   ENTREVISTA
+===================================== */
 
 function continuarEntrevista() {
 
-  const fecha =
-    document.getElementById("fecha").value;
+    const fecha =
+        document.getElementById("fecha").value.trim();
 
-  const hora =
-    document.getElementById("hora").value;
-
-
-  if (
-    fecha === "" ||
-    hora === ""
-  ) {
-
-    alert(
-      "Selecciona una fecha y una hora para continuar."
-    );
-
-    return;
-
-  }
+    const hora =
+        document.getElementById("hora").value.trim();
 
 
-  irAlPaso(4);
+    if (fecha === "") {
+
+        alert("Por favor indica una fecha.");
+
+        document.getElementById("fecha").focus();
+
+        return;
+    }
+
+
+    if (hora === "") {
+
+        alert("Por favor indica una hora.");
+
+        document.getElementById("hora").focus();
+
+        return;
+    }
+
+
+    mostrarPaso(5);
+}
+
+
+/* =====================================
+   BOTÓN DEL ENCABEZADO
+===================================== */
+
+function irAlInicio() {
+
+    mostrarPaso(1);
 
 }
 
 
+/* =====================================
+   ENLACE FINAL
+===================================== */
 
-/*
-====================================================
-CONFIGURAR BOTÓN FINAL
-====================================================
-*/
+function irAlEnlace() {
 
-const botonFinal =
-  document.getElementById("enlaceFinal");
+    /*
+       El botón solamente dirige al enlace
+       configurado arriba.
+    */
+
+    if (
+        ENLACE_FINAL === "" ||
+        ENLACE_FINAL === "https://example.com"
+    ) {
+
+        alert(
+            "Configura primero ENLACE_FINAL en script.js."
+        );
+
+        return;
+    }
 
 
-if (botonFinal) {
-
-  botonFinal.href = ENLACE_FINAL;
+    window.location.href = ENLACE_FINAL;
 
 }
 
 
+/* =====================================
+   INICIO
+===================================== */
 
-/*
-====================================================
-BOTÓN SUPERIOR
-====================================================
-*/
-
-const botonSuperior =
-  document.querySelector(".top-btn");
-
-
-if (botonSuperior) {
-
-  botonSuperior.addEventListener(
-    "click",
+document.addEventListener(
+    "DOMContentLoaded",
     function() {
 
-      irAlPaso(1);
+        mostrarPaso(1);
 
     }
-  );
-
-}
+);
