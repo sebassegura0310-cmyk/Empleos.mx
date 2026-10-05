@@ -1,11 +1,9 @@
-/* ================================
+/* =========================================
    CONFIGURACIÓN GENERAL
-================================ */
+========================================= */
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 html {
@@ -13,993 +11,610 @@ html {
 }
 
 body {
+    margin: 0;
+    padding: 0;
+
     font-family:
         Arial,
         Helvetica,
         sans-serif;
 
-    background: #f5f3eb;
-
+    background: #f5f3ec;
     color: #29231f;
 
     min-height: 100vh;
 }
 
 
-/* ================================
+/* =========================================
    ENCABEZADO
-================================ */
+========================================= */
 
-.topbar {
+.header {
+    width: 100%;
 
-    position: sticky;
+    min-height: 90px;
 
-    top: 0;
-
-    z-index: 1000;
-
-    height: 92px;
-
-    background: rgba(248, 247, 240, 0.97);
-
-    border-bottom: 1px solid #deddd5;
+    padding: 15px 28px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
-    padding: 0 28px;
+    background: #f8f7f1;
 
-    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e2e1d9;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
 }
 
-
 .logo-area {
-
     display: flex;
-
     align-items: center;
 
     gap: 14px;
 
-    font-size: 28px;
-
-    font-weight: 700;
+    font-size: 24px;
 }
 
-
 .logo-icon {
-
-    width: 54px;
-
-    height: 54px;
+    width: 55px;
+    height: 55px;
 
     border-radius: 50%;
 
-    background: #176b2a;
+    background: #1d6b2b;
 
     color: white;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    font-size: 30px;
-
-    font-weight: bold;
+    font-size: 25px;
 }
 
-
-.header-button {
-
+.top-button {
     border: none;
 
-    background: #176b2a;
-
+    background: #1d6b2b;
     color: white;
 
-    font-size: 20px;
-
-    font-weight: 600;
+    padding: 17px 27px;
 
     border-radius: 10px;
 
-    padding: 17px 28px;
+    font-size: 18px;
+    font-weight: bold;
 
     cursor: pointer;
-
-    transition: 0.2s;
 }
 
 
-.header-button:hover {
-    background: #115620;
-}
-
-
-/* ================================
+/* =========================================
    PANTALLAS
-================================ */
+========================================= */
 
 main {
-    min-height: calc(100vh - 92px);
+    width: 100%;
 }
 
-
 .pantalla {
-
     display: none;
 
-    min-height: calc(100vh - 92px);
+    width: 100%;
+
+    min-height: calc(100vh - 90px);
 
     padding: 70px 28px;
 
     align-items: center;
-
     justify-content: center;
 
     flex-direction: column;
-
-    animation: aparecer 0.35s ease;
 }
-
 
 .pantalla.activa {
     display: flex;
 }
 
 
-@keyframes aparecer {
+/* =========================================
+   INICIO
+========================================= */
 
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* ================================
-   PRIMERA PANTALLA
-================================ */
-
-#paso1 {
-    justify-content: flex-start;
-
+#paso-0 {
     text-align: center;
-
-    padding-top: 35px;
 }
 
-
-.disponibles {
-
-    background: white;
-
-    border: 1px solid #d6ddd6;
-
-    border-radius: 40px;
-
-    padding: 15px 25px;
-
-    font-size: 18px;
-
-    color: #6c6864;
-
-    margin-bottom: 42px;
-
+.disponible {
     display: inline-flex;
 
     align-items: center;
 
-    gap: 12px;
+    gap: 10px;
 
-    box-shadow: 0 1px 2px rgba(0,0,0,.04);
+    background: white;
+
+    border: 1px solid #d8ded9;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    color: #66615d;
+
+    font-size: 17px;
+
+    margin-bottom: 40px;
 }
 
-
-.punto {
-
-    width: 13px;
-
-    height: 13px;
-
-    background: #80ad8b;
+.disponible span {
+    width: 10px;
+    height: 10px;
 
     border-radius: 50%;
+
+    background: #86b291;
 }
 
-
-.hero {
-
-    max-width: 650px;
-
-    margin: auto;
-}
-
-
-.hero h1 {
-
+h1 {
     font-size: 58px;
 
     line-height: 1.05;
 
-    margin-bottom: 45px;
+    margin: 0 auto 40px;
 
-    font-weight: 800;
+    max-width: 700px;
 }
 
-
-.hero h1 strong {
-
+h1 strong {
     display: block;
 
-    color: #176b2a;
+    color: #1d6b2b;
 }
 
+.descripcion {
+    max-width: 700px;
 
-.hero p {
+    margin: 0 auto;
 
     color: #706963;
 
     font-size: 23px;
 
     line-height: 1.55;
-
-    margin-bottom: 10px;
 }
-
-
-/* ================================
-   SALARIO
-================================ */
 
 .salario {
-
-    width: min(620px, 100%);
-
     background: white;
 
-    border: 1px solid #dedbd2;
+    border: 1px solid #deddd6;
 
-    border-radius: 20px;
+    border-radius: 18px;
 
-    padding: 42px 25px;
+    max-width: 620px;
 
-    margin: 50px auto 0;
+    margin: 55px auto 50px;
+
+    padding: 35px 20px;
 
     box-shadow:
-        0 3px 6px rgba(0,0,0,.08);
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 10px;
+        0 5px 12px rgba(0, 0, 0, 0.08);
 }
 
+.salario-titulo {
+    color: #77716b;
 
-.salario span {
+    font-size: 17px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.salario-cantidad {
+    color: #df5d18;
+
+    font-size: 48px;
+
+    font-weight: bold;
+
+    margin: 10px 0;
+}
+
+.salario-sub {
+    color: #77716b;
 
     font-size: 18px;
-
-    color: #6e6863;
-
-    font-weight: 600;
 }
 
-
-.salario strong {
-
-    font-size: 47px;
-
-    color: #e4660a;
-}
-
-
-.salario small {
+.texto-postular {
+    color: #716b65;
 
     font-size: 19px;
 
-    color: #716b67;
+    margin-bottom: 5px;
 }
-
-
-.llamada {
-
-    margin-top: 55px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 12px;
-}
-
-
-.llamada p {
-
-    color: #6c6662;
-
-    font-size: 19px;
-}
-
 
 .flecha {
+    color: #df5d18;
 
-    font-size: 40px;
+    font-size: 38px;
 
-    color: #e4660a;
-
-    line-height: 1;
+    margin: 5px 0 15px;
 }
 
 
-.orange-button {
+/* =========================================
+   BOTONES
+========================================= */
+
+.boton {
+    width: 100%;
+
+    min-height: 55px;
 
     border: none;
 
-    background: #ec650b;
+    border-radius: 10px;
 
-    color: white;
+    padding: 14px 20px;
 
     font-size: 20px;
 
-    font-weight: 600;
-
-    padding: 19px 55px;
-
-    border-radius: 12px;
+    font-weight: bold;
 
     cursor: pointer;
 
-    transition: 0.2s;
+    transition: transform .15s, opacity .15s;
+}
 
-    margin-top: 10px;
+.boton:hover {
+    opacity: .9;
+}
+
+.boton:active {
+    transform: scale(.98);
+}
+
+.boton span {
+    margin-left: 20px;
+}
+
+.naranja {
+    width: 240px;
+
+    background: #ed620f;
+
+    color: white;
+}
+
+.verde {
+    background: #1d6b2b;
+
+    color: white;
 }
 
 
-.orange-button:hover {
-
-    background: #d95807;
-
-    transform: translateY(-1px);
-}
-
-
-/* ================================
+/* =========================================
    TARJETAS
-================================ */
+========================================= */
 
-.card {
+.tarjeta {
+    width: 100%;
 
-    width: min(620px, 100%);
+    max-width: 620px;
 
     background: white;
 
-    border: 1px solid #dadbd4;
+    border: 1px solid #dcdcd5;
 
-    border-radius: 25px;
+    border-radius: 24px;
 
-    padding: 60px 55px;
+    padding: 50px;
 
     box-shadow:
-        0 12px 28px rgba(40,35,30,.10);
+        0 12px 25px rgba(0, 0, 0, .09);
+}
 
+.tarjeta h2 {
     text-align: center;
+
+    font-size: 34px;
+
+    margin: 0 0 20px;
 }
-
-
-.card h2 {
-
-    font-size: 35px;
-
-    margin-bottom: 18px;
-
-    font-weight: 800;
-}
-
 
 .subtitulo {
-
-    color: #706b67;
-
-    font-size: 22px;
-
-    line-height: 1.45;
-
-    margin-bottom: 45px;
-}
-
-
-/* ================================
-   FORMULARIO
-================================ */
-
-.formulario {
-
-    text-align: left;
-}
-
-
-.formulario h2,
-.formulario .subtitulo {
-
     text-align: center;
-}
 
-
-.formulario label {
-
-    display: block;
-
-    font-size: 19px;
-
-    font-weight: 600;
-
-    margin: 25px 0 10px;
-}
-
-
-input {
-
-    width: 100%;
-
-    height: 62px;
-
-    border: none;
-
-    outline: none;
-
-    border-radius: 12px;
-
-    background: #f0eee8;
-
-    padding: 0 22px;
+    color: #706963;
 
     font-size: 20px;
-
-    color: #37322f;
-
-    box-shadow:
-        0 2px 5px rgba(0,0,0,.05);
-
-    transition: 0.2s;
-}
-
-
-input:focus {
-
-    background: white;
-
-    box-shadow:
-        0 0 0 2px #176b2a;
-}
-
-
-input::placeholder {
-
-    color: #716b66;
-}
-
-
-.green-button {
-
-    width: 100%;
-
-    border: none;
-
-    background: #176b2a;
-
-    color: white;
-
-    height: 62px;
-
-    border-radius: 12px;
-
-    margin-top: 30px;
-
-    font-size: 21px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-
-.green-button:hover {
-
-    background: #115620;
-}
-
-
-.green-button span,
-.red-button span {
-
-    margin-left: 18px;
-
-    font-size: 27px;
-}
-
-
-/* ================================
-   ICONOS
-================================ */
-
-.icon-circle {
-
-    width: 96px;
-
-    height: 96px;
-
-    border-radius: 50%;
-
-    margin: 0 auto 32px;
-
-    background: #eaf2eb;
-
-    color: #176b2a;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    font-size: 45px;
-
-    font-weight: 600;
-}
-
-
-/* ================================
-   PREGUNTAS
-================================ */
-
-.pregunta p {
-
-    color: #6c6661;
-
-    font-size: 23px;
 
     line-height: 1.5;
 
-    margin: 25px auto 40px;
-
-    max-width: 500px;
+    margin-bottom: 40px;
 }
 
 
-.option-button {
+/* =========================================
+   FORMULARIO
+========================================= */
 
+form label,
+.tarjeta > label,
+.bloque-gris label {
+    display: block;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin: 20px 0 8px;
+}
+
+input {
     width: 100%;
 
-    height: 64px;
+    height: 55px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #f0eee9;
+
+    padding: 0 18px;
+
+    font-size: 18px;
+
+    color: #403a35;
+
+    outline: none;
+}
+
+input:focus {
+    box-shadow:
+        0 0 0 2px #1d6b2b;
+}
+
+
+/* =========================================
+   PREGUNTAS
+========================================= */
+
+.pregunta {
+    text-align: center;
+}
+
+.icono {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 30px;
+
+    border-radius: 50%;
+
+    background: #eaf1eb;
+
+    color: #1d6b2b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+}
+
+.icono.grande {
+    font-size: 40px;
+}
+
+.pregunta > p {
+    color: #706963;
+
+    font-size: 22px;
+
+    line-height: 1.5;
+
+    margin: 25px 0 40px;
+}
+
+.opciones {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.opcion {
+    width: 100%;
+
+    min-height: 60px;
+
+    border-radius: 10px;
+
+    border: 2px solid #d7e0d9;
 
     background: white;
 
-    border: 3px solid #d7e0d8;
-
-    border-radius: 12px;
-
-    font-size: 21px;
-
-    font-weight: 600;
-
-    color: #29231f;
-
-    margin-top: 15px;
+    font-size: 20px;
 
     cursor: pointer;
-
-    transition: 0.2s;
 }
 
-
-.option-button:hover {
-
-    border-color: #176b2a;
+.opcion:hover {
+    border-color: #1d6b2b;
 
     background: #f4f8f4;
 }
 
 
-/* ================================
-   ENTREVISTA
-================================ */
+/* =========================================
+   BLOQUE ENTREVISTA
+========================================= */
 
-.entrevista > p {
-
-    color: #6c6661;
-
-    font-size: 22px;
-
-    line-height: 1.5;
-
-    margin-bottom: 35px;
-}
-
-
-.datos-entrevista {
-
-    text-align: left;
-
-    background: #f4f6f3;
+.bloque-gris {
+    background: #f3f5f3;
 
     border-radius: 17px;
-
-    padding: 25px;
-
-    margin-top: 15px;
-}
-
-
-.datos-entrevista strong {
-
-    display: block;
-
-    font-size: 19px;
-
-    line-height: 1.5;
-
-    margin-bottom: 25px;
-}
-
-
-.datos-entrevista label {
-
-    display: block;
-
-    font-size: 18px;
-
-    font-weight: 600;
-
-    margin: 18px 0 8px;
-}
-
-
-/* ================================
-   AVISO FINAL
-================================ */
-
-.final-card {
-
-    padding-bottom: 50px;
-}
-
-
-.final-card > p {
-
-    color: #6d6762;
-
-    font-size: 20px;
-
-    line-height: 1.6;
-
-    margin-bottom: 30px;
-}
-
-
-.aviso {
-
-    text-align: left;
-
-    background: #fffbea;
-
-    border: 1px solid #eadf9e;
-
-    border-radius: 14px;
 
     padding: 25px;
 
     margin: 25px 0;
 }
 
-
-.aviso strong {
-
-    color: #70441c;
+.bloque-gris h3 {
+    margin-top: 0;
 
     font-size: 19px;
+
+    line-height: 1.5;
 }
 
 
-.aviso p {
+/* =========================================
+   FINAL
+========================================= */
 
-    color: #70441c;
-
-    font-size: 17px;
-
-    line-height: 1.6;
-
-    margin-top: 10px;
+.final {
+    text-align: center;
 }
 
+.final p {
+    color: #706963;
 
-.red-button {
+    font-size: 20px;
 
-    width: 100%;
+    line-height: 1.5;
 
-    height: 64px;
+    margin: 25px 0 35px;
+}
 
-    border: none;
-
-    border-radius: 12px;
-
-    background: #e00000;
+.final-button {
+    background: #e21a1a;
 
     color: white;
-
-    font-size: 21px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: 0.2s;
 }
 
 
-.red-button:hover {
-
-    background: #c90000;
-}
-
-
-/* ================================
-   FOOTER
-================================ */
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
 
 footer {
-
     background: white;
 
-    border-top: 1px solid #deddd5;
+    border-top: 1px solid #deddd6;
 
-    min-height: 230px;
-
-    padding: 50px 20px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-direction: column;
-
-    gap: 30px;
+    padding: 50px 25px;
 
     text-align: center;
 }
 
-
 .footer-logo {
-
     display: flex;
 
     align-items: center;
+    justify-content: center;
 
     gap: 14px;
 
-    font-size: 28px;
+    font-size: 25px;
+
+    margin-bottom: 25px;
 }
 
-
 .footer-logo .logo-icon {
-
     width: 55px;
-
     height: 55px;
 }
 
-
 footer p {
+    color: #716b65;
 
-    color: #706a65;
+    font-size: 17px;
 
-    font-size: 18px;
+    margin: 0;
 }
 
 
-/* ================================
-   CELULARES
-================================ */
+/* =========================================
+   MÓVIL
+========================================= */
 
 @media (max-width: 600px) {
 
-    .topbar {
-
-        height: 88px;
-
-        padding: 0 20px;
-    }
-
-
-    .logo-area {
-
-        font-size: 22px;
-
-        gap: 10px;
-    }
-
-
-    .logo-icon {
-
-        width: 48px;
-
-        height: 48px;
-
-        font-size: 25px;
-    }
-
-
-    .header-button {
-
-        font-size: 17px;
-
-        padding: 15px 20px;
-    }
-
-
-    .pantalla {
-
-        padding: 55px 28px;
-    }
-
-
-    #paso1 {
-
-        padding-top: 35px;
-    }
-
-
-    .disponibles {
-
-        font-size: 16px;
+    .header {
+        min-height: 82px;
 
         padding: 13px 20px;
     }
 
+    .logo-area {
+        font-size: 21px;
 
-    .hero h1 {
-
-        font-size: 47px;
-
-        margin-bottom: 40px;
+        gap: 10px;
     }
 
+    .logo-icon {
+        width: 48px;
+        height: 48px;
 
-    .hero p {
-
-        font-size: 20px;
-
-        line-height: 1.6;
+        font-size: 21px;
     }
 
-
-    .salario {
-
-        margin-top: 42px;
-
-        padding: 35px 18px;
-    }
-
-
-    .salario strong {
-
-        font-size: 39px;
-    }
-
-
-    .card {
-
-        padding: 45px 28px;
-
-        border-radius: 23px;
-    }
-
-
-    .card h2 {
-
-        font-size: 31px;
-    }
-
-
-    .subtitulo {
-
-        font-size: 20px;
-    }
-
-
-    .pregunta p {
-
-        font-size: 20px;
-    }
-
-
-    input {
-
-        height: 60px;
-
-        font-size: 18px;
-    }
-
-
-    .green-button,
-    .red-button {
-
-        height: 60px;
-    }
-
-
-    footer {
-
-        min-height: 210px;
-
-        padding: 45px 20px;
-    }
-
-
-    footer p {
+    .top-button {
+        padding: 14px 18px;
 
         font-size: 16px;
     }
-}
 
-
-/* ================================
-   PANTALLAS MUY PEQUEÑAS
-================================ */
-
-@media (max-width: 380px) {
-
-    .topbar {
-
-        padding: 0 14px;
+    .pantalla {
+        padding: 55px 28px;
     }
 
-
-    .logo-area {
-
-        font-size: 19px;
+    h1 {
+        font-size: 43px;
     }
 
-
-    .header-button {
-
-        font-size: 15px;
-
-        padding: 13px 16px;
+    .descripcion {
+        font-size: 20px;
     }
 
-
-    .hero h1 {
-
-        font-size: 40px;
+    .salario {
+        margin-top: 40px;
     }
 
+    .salario-cantidad {
+        font-size: 39px;
+    }
 
-    .hero p {
+    .tarjeta {
+        padding: 35px 28px;
 
+        border-radius: 22px;
+    }
+
+    .tarjeta h2 {
+        font-size: 29px;
+    }
+
+    .subtitulo {
         font-size: 18px;
     }
 
+    .pregunta > p {
+        font-size: 20px;
+    }
 
-    .salario strong {
-
-        font-size: 33px;
+    .naranja {
+        width: 240px;
     }
 }
