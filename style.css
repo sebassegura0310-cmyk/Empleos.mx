@@ -1,0 +1,557 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f8fb;
+    color: #17202a;
+    line-height: 1.6;
+}
+
+
+/* HEADER */
+
+.header {
+    width: 100%;
+    height: 70px;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 2px 15px rgba(0,0,0,.06);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: #159447;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #159447;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 620px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 70px 7%;
+
+    background:
+        linear-gradient(
+            120deg,
+            #eaf9f0,
+            #ffffff
+        );
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.badge {
+    display: inline-block;
+
+    background: #dff6e8;
+    color: #12833e;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 7vw, 72px);
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #159447;
+}
+
+.hero p {
+    max-width: 600px;
+
+    font-size: 19px;
+    color: #667085;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* BOTONES */
+
+.btn {
+    border: none;
+    border-radius: 10px;
+
+    padding: 14px 22px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.primary {
+    background: #159447;
+    color: white;
+}
+
+.primary:hover {
+    background: #117b3a;
+}
+
+.secondary {
+    background: white;
+    color: #159447;
+
+    border: 2px solid #159447;
+}
+
+.full {
+    width: 100%;
+}
+
+
+/* SERVICES */
+
+.services {
+    padding: 70px 7%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,.06);
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.service-card h2 {
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #667085;
+    margin-bottom: 20px;
+}
+
+.service-card a {
+    color: #159447;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* SECCIONES */
+
+.section {
+    padding: 90px 7%;
+}
+
+.section-title {
+    max-width: 700px;
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.section-title span {
+    color: #159447;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.section-title p {
+    color: #667085;
+}
+
+
+/* EMPLEO */
+
+.job-card {
+    max-width: 850px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,.06);
+}
+
+.job-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.job-tag {
+    background: #e5f8ec;
+    color: #159447;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.job-card h3 {
+    font-size: 26px;
+    margin-top: 10px;
+}
+
+.job-icon {
+    font-size: 45px;
+}
+
+.job-card p {
+    color: #667085;
+    margin-bottom: 20px;
+}
+
+.job-info {
+    display: flex;
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 25px;
+}
+
+.job-info span {
+    background: #f1f3f5;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+}
+
+
+/* PRÉSTAMOS */
+
+.loans {
+    background: #eef8f2;
+}
+
+.loan-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.loan-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,.05);
+}
+
+.loan-icon {
+    font-size: 40px;
+}
+
+.loan-card h3 {
+    margin-top: 10px;
+}
+
+.loan-card strong {
+    display: block;
+
+    font-size: 30px;
+
+    color: #159447;
+
+    margin: 10px 0;
+}
+
+.loan-card p {
+    color: #667085;
+
+    margin-bottom: 20px;
+}
+
+
+/* FORMULARIO */
+
+.contact {
+    padding: 90px 7%;
+}
+
+form {
+    max-width: 600px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,.06);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #d0d5dd;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #159447;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* WHATSAPP */
+
+.whatsapp {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: #25d366;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 28px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+
+    z-index: 999;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #101828;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 45px 20px;
+}
+
+footer h3 {
+    color: #36c76f;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #98a2b3;
+
+    margin-bottom: 10px;
+}
+
+footer small {
+    color: #667085;
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 0 5%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        background: white;
+
+        display: none;
+
+        flex-direction: column;
+
+        padding: 20px 7%;
+
+        box-shadow: 0 10px 20px rgba(0,0,0,.08);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 570px;
+
+        padding: 60px 6%;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+
+        padding: 50px 6%;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+    }
+
+    .loan-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .job-top {
+        align-items: flex-start;
+    }
+
+    form {
+        padding: 25px;
+    }
+}
