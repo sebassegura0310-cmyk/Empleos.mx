@@ -1,326 +1,361 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Oportunidades | Empleo y Préstamos</title>
-    <meta name="description" content="Encuentra oportunidades de empleo y consulta opciones de financiación.">
+  <title>Portal de Postulación</title>
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
 
-    <!-- ENCABEZADO -->
-    <header class="header">
-        <div class="logo">
-            OPORTUNIDADES
+  <header class="topbar">
+
+    <div class="brand">
+      <div class="logo">◇</div>
+      <span>Portal de Postulación</span>
+    </div>
+
+    <button class="top-btn" onclick="irAlPaso(1)">
+      Postularme
+    </button>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- PASO 1 -->
+
+    <section class="step active" data-step="0">
+
+      <div class="hero">
+
+        <div class="badge">
+          ● Vacantes disponibles
         </div>
 
-        <button class="menu-btn" id="menuBtn">☰</button>
-
-        <nav id="nav">
-            <a href="#inicio">Inicio</a>
-            <a href="#empleo">Empleo</a>
-            <a href="#prestamos">Préstamos</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
-
-
-    <!-- INICIO -->
-    <section class="hero" id="inicio">
-
-        <div class="hero-content">
-
-            <span class="badge">✨ OPORTUNIDADES PARA TI</span>
-
-            <h1>
-                Encuentra nuevas
-                <span>oportunidades</span>
-            </h1>
-
-            <p>
-                Conoce nuestras oportunidades de empleo y consulta
-                las opciones de préstamo disponibles.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#empleo" class="btn primary">
-                    💼 Ver empleos
-                </a>
-
-                <a href="#prestamos" class="btn secondary">
-                    💰 Ver préstamos
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SERVICIOS -->
-    <section class="services">
-
-        <div class="service-card">
-            <div class="icon">💼</div>
-
-            <h2>Oportunidades de empleo</h2>
-
-            <p>
-                Conoce las vacantes disponibles y descubre
-                cómo puedes postularte.
-            </p>
-
-            <a href="#empleo">Ver oportunidades →</a>
-        </div>
-
-
-        <div class="service-card">
-            <div class="icon">💰</div>
-
-            <h2>Opciones de préstamo</h2>
-
-            <p>
-                Consulta las opciones disponibles, requisitos
-                y condiciones antes de solicitar.
-            </p>
-
-            <a href="#prestamos">Consultar →</a>
-        </div>
-
-    </section>
-
-
-    <!-- EMPLEO -->
-    <section class="section" id="empleo">
-
-        <div class="section-title">
-            <span>💼 EMPLEO</span>
-
-            <h2>Oportunidades de trabajo</h2>
-
-            <p>
-                Si estás buscando una oportunidad laboral,
-                revisa la información y contáctanos.
-            </p>
-        </div>
-
-
-        <div class="job-card">
-
-            <div class="job-top">
-                <div>
-                    <span class="job-tag">VACANTE</span>
-
-                    <h3>Asistente de redes sociales</h3>
-                </div>
-
-                <span class="job-icon">📱</span>
-            </div>
-
-            <p>
-                Apoya en la gestión de redes sociales,
-                publicación de contenido y atención de mensajes.
-            </p>
-
-            <div class="job-info">
-                <span>📍 Remoto</span>
-                <span>📱 Desde celular</span>
-                <span>⏰ Horario flexible</span>
-            </div>
-
-            <button class="btn primary full" onclick="postularEmpleo()">
-                Postularme
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- PRÉSTAMOS -->
-    <section class="section loans" id="prestamos">
-
-        <div class="section-title">
-            <span>💰 PRÉSTAMOS</span>
-
-            <h2>Consulta nuestras opciones</h2>
-
-            <p>
-                Solicita información sobre montos, requisitos,
-                plazos y condiciones.
-            </p>
-        </div>
-
-
-        <div class="loan-grid">
-
-            <div class="loan-card">
-
-                <div class="loan-icon">💵</div>
-
-                <h3>Préstamos desde</h3>
-
-                <strong>$8.000</strong>
-
-                <p>
-                    Consulta disponibilidad y condiciones.
-                </p>
-
-                <button class="btn primary full"
-                    onclick="solicitarPrestamo(8000)">
-                    Consultar
-                </button>
-
-            </div>
-
-
-            <div class="loan-card">
-
-                <div class="loan-icon">💵</div>
-
-                <h3>Préstamos desde</h3>
-
-                <strong>$20.000</strong>
-
-                <p>
-                    Consulta disponibilidad y condiciones.
-                </p>
-
-                <button class="btn primary full"
-                    onclick="solicitarPrestamo(20000)">
-                    Consultar
-                </button>
-
-            </div>
-
-
-            <div class="loan-card">
-
-                <div class="loan-icon">💵</div>
-
-                <h3>Otro monto</h3>
-
-                <strong>Consultar</strong>
-
-                <p>
-                    Pregunta por otros montos disponibles.
-                </p>
-
-                <button class="btn primary full"
-                    onclick="solicitarPrestamo('otro monto')">
-                    Consultar
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FORMULARIO -->
-    <section class="contact" id="contacto">
-
-        <div class="section-title">
-
-            <span>📩 CONTACTO</span>
-
-            <h2>¿Quieres más información?</h2>
-
-            <p>
-                Déjanos tus datos y te contactaremos.
-            </p>
-
-        </div>
-
-
-        <form id="contactForm">
-
-            <input
-                type="text"
-                id="nombre"
-                placeholder="Tu nombre"
-                required
-            >
-
-            <input
-                type="tel"
-                id="telefono"
-                placeholder="Número de WhatsApp"
-                required
-            >
-
-            <select id="interes" required>
-
-                <option value="">
-                    ¿Qué te interesa?
-                </option>
-
-                <option value="empleo">
-                    💼 Empleo
-                </option>
-
-                <option value="prestamo">
-                    💰 Préstamo
-                </option>
-
-                <option value="ambos">
-                    💼💰 Ambos
-                </option>
-
-            </select>
-
-
-            <textarea
-                id="mensaje"
-                placeholder="Escribe tu mensaje..."
-                rows="4">
-            </textarea>
-
-
-            <button type="submit" class="btn primary full">
-                Enviar solicitud
-            </button>
-
-        </form>
-
-    </section>
-
-
-    <!-- WHATSAPP -->
-    <a
-        class="whatsapp"
-        id="whatsappBtn"
-        href="#"
-        target="_blank"
-        aria-label="WhatsApp">
-        💬
-    </a>
-
-
-    <!-- PIE -->
-    <footer>
-
-        <h3>OPORTUNIDADES</h3>
+        <h1>
+          Bienvenido a
+          <span>Portal de Postulación</span>
+        </h1>
 
         <p>
-            Empleo · Préstamos · Información
+          Completa el proceso de postulación y revisa la información
+          antes de continuar.
         </p>
 
-        <small>
-            © 2026 Todos los derechos reservados.
-        </small>
 
-    </footer>
+        <div class="salary">
+
+          <small>INGRESO SEMANAL</small>
+
+          <strong>
+            $4,000 pesos
+          </strong>
+
+          <span>
+            Pagos puntuales cada semana
+          </span>
+
+        </div>
 
 
-    <script src="script.js"></script>
+        <button class="primary" onclick="irAlPaso(1)">
+          Postularme
+          <b>→</b>
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PASO 2 -->
+
+    <section class="step" data-step="1">
+
+      <div class="card">
+
+        <h2>
+          ¡Postúlate ahora!
+        </h2>
+
+        <p>
+          Completa tus datos para continuar.
+        </p>
+
+
+        <label>
+          Nombre completo
+
+          <input
+            id="nombre"
+            type="text"
+            placeholder="Ej: María García López"
+          >
+
+        </label>
+
+
+        <label>
+          Teléfono / WhatsApp
+
+          <input
+            id="telefono"
+            type="tel"
+            placeholder="Ej: 55 1234 5678"
+          >
+
+        </label>
+
+
+        <label>
+          Ciudad / Estado
+
+          <input
+            id="ciudad"
+            type="text"
+            placeholder="Ej: Ciudad de México"
+          >
+
+        </label>
+
+
+        <button
+          class="primary"
+          onclick="continuarDesdeFormulario()"
+        >
+          Continuar
+          <b>→</b>
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PASO 3 -->
+
+    <section class="step" data-step="2">
+
+      <div class="card">
+
+        <div class="icon">
+          ☎
+        </div>
+
+        <h2>
+          Información adicional
+        </h2>
+
+        <p>
+          ¿Tienes alguna discapacidad física de la que debamos enterarnos?
+        </p>
+
+
+        <div class="choices">
+
+          <button
+            class="choice"
+            onclick="irAlPaso(3)"
+          >
+            No
+          </button>
+
+
+          <button
+            class="choice"
+            onclick="irAlPaso(3)"
+          >
+            Sí
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PASO 4 -->
+
+    <section class="step" data-step="3">
+
+      <div class="card">
+
+        <div class="icon">
+          ▣
+        </div>
+
+        <h2>
+          Entrevista telefónica
+        </h2>
+
+        <p>
+          ¿Estás de acuerdo en que te llamemos para una entrevista
+          por teléfono?
+        </p>
+
+
+        <div class="info-box">
+
+          <strong>
+            ¿Qué día y hora estás disponible para que te llamemos?
+          </strong>
+
+
+          <label>
+            Fecha disponible
+
+            <input
+              id="fecha"
+              type="date"
+            >
+
+          </label>
+
+
+          <label>
+            Hora disponible
+
+            <input
+              id="hora"
+              type="time"
+            >
+
+          </label>
+
+        </div>
+
+
+        <button
+          class="primary"
+          onclick="continuarEntrevista()"
+        >
+          Continuar
+          <b>→</b>
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PASO 5 -->
+
+    <section class="step" data-step="4">
+
+      <div class="card">
+
+        <div class="icon">
+          ▤
+        </div>
+
+        <h2>
+          Información para el pago
+              </h2>
+              <p>
+          ¿Tienes una cuenta bancaria para recibir pagos?
+        </p>
+
+
+        <div class="choices">
+
+          <button
+            class="choice"
+            onclick="irAlPaso(5)"
+          >
+            No
+          </button>
+
+
+          <button
+            class="choice"
+            onclick="irAlPaso(5)"
+          >
+            Sí
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PASO FINAL -->
+
+    <section class="step" data-step="5">
+
+      <div class="card">
+
+        <div class="icon">
+          ✓
+        </div>
+
+
+        <h2>
+          Último paso
+        </h2>
+
+
+        <p>
+          Tu proceso está listo para continuar.
+        </p>
+
+
+        <div class="notice">
+
+          <strong>
+            Información importante
+          </strong>
+
+          <p>
+            Al pulsar el siguiente botón serás dirigido a un sitio
+            externo. Comprueba siempre que el sitio sea legítimo
+            antes de proporcionar información personal o financiera.
+          </p>
+
+        </div>
+
+
+        <a
+          id="enlaceFinal"
+          class="primary link-button"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Continuar al sitio externo
+          <b>→</b>
+        </a>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <footer>
+
+    © 2026 Portal de Postulación · Plantilla demostrativa
+
+  </footer>
+
+
+  <script src="script.js"></script>
 
 </body>
-  </html>
+</html>
