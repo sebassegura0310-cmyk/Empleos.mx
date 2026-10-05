@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Oportunidades | Empleo y Préstamos</title>
+    <meta name="description" content="Encuentra oportunidades de empleo y consulta opciones de financiación.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="header">
+        <div class="logo">
+            OPORTUNIDADES
+        </div>
+
+        <button class="menu-btn" id="menuBtn">☰</button>
+
+        <nav id="nav">
+            <a href="#inicio">Inicio</a>
+            <a href="#empleo">Empleo</a>
+            <a href="#prestamos">Préstamos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+
+    <!-- INICIO -->
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <span class="badge">✨ OPORTUNIDADES PARA TI</span>
+
+            <h1>
+                Encuentra nuevas
+                <span>oportunidades</span>
+            </h1>
+
+            <p>
+                Conoce nuestras oportunidades de empleo y consulta
+                las opciones de préstamo disponibles.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#empleo" class="btn primary">
+                    💼 Ver empleos
+                </a>
+
+                <a href="#prestamos" class="btn secondary">
+                    💰 Ver préstamos
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICIOS -->
+    <section class="services">
+
+        <div class="service-card">
+            <div class="icon">💼</div>
+
+            <h2>Oportunidades de empleo</h2>
+
+            <p>
+                Conoce las vacantes disponibles y descubre
+                cómo puedes postularte.
+            </p>
+
+            <a href="#empleo">Ver oportunidades →</a>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">💰</div>
+
+            <h2>Opciones de préstamo</h2>
+
+            <p>
+                Consulta las opciones disponibles, requisitos
+                y condiciones antes de solicitar.
+            </p>
+
+            <a href="#prestamos">Consultar →</a>
+        </div>
+
+    </section>
+
+
+    <!-- EMPLEO -->
+    <section class="section" id="empleo">
+
+        <div class="section-title">
+            <span>💼 EMPLEO</span>
+
+            <h2>Oportunidades de trabajo</h2>
+
+            <p>
+                Si estás buscando una oportunidad laboral,
+                revisa la información y contáctanos.
+            </p>
+        </div>
+
+
+        <div class="job-card">
+
+            <div class="job-top">
+                <div>
+                    <span class="job-tag">VACANTE</span>
+
+                    <h3>Asistente de redes sociales</h3>
+                </div>
+
+                <span class="job-icon">📱</span>
+            </div>
+
+            <p>
+                Apoya en la gestión de redes sociales,
+                publicación de contenido y atención de mensajes.
+            </p>
+
+            <div class="job-info">
+                <span>📍 Remoto</span>
+                <span>📱 Desde celular</span>
+                <span>⏰ Horario flexible</span>
+            </div>
+
+            <button class="btn primary full" onclick="postularEmpleo()">
+                Postularme
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRÉSTAMOS -->
+    <section class="section loans" id="prestamos">
+
+        <div class="section-title">
+            <span>💰 PRÉSTAMOS</span>
+
+            <h2>Consulta nuestras opciones</h2>
+
+            <p>
+                Solicita información sobre montos, requisitos,
+                plazos y condiciones.
+            </p>
+        </div>
+
+
+        <div class="loan-grid">
+
+            <div class="loan-card">
+
+                <div class="loan-icon">💵</div>
+
+                <h3>Préstamos desde</h3>
+
+                <strong>$8.000</strong>
+
+                <p>
+                    Consulta disponibilidad y condiciones.
+                </p>
+
+                <button class="btn primary full"
+                    onclick="solicitarPrestamo(8000)">
+                    Consultar
+                </button>
+
+            </div>
+
+
+            <div class="loan-card">
+
+                <div class="loan-icon">💵</div>
+
+                <h3>Préstamos desde</h3>
+
+                <strong>$20.000</strong>
+
+                <p>
+                    Consulta disponibilidad y condiciones.
+                </p>
+
+                <button class="btn primary full"
+                    onclick="solicitarPrestamo(20000)">
+                    Consultar
+                </button>
+
+            </div>
+
+
+            <div class="loan-card">
+
+                <div class="loan-icon">💵</div>
+
+                <h3>Otro monto</h3>
+
+                <strong>Consultar</strong>
+
+                <p>
+                    Pregunta por otros montos disponibles.
+                </p>
+
+                <button class="btn primary full"
+                    onclick="solicitarPrestamo('otro monto')">
+                    Consultar
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FORMULARIO -->
+    <section class="contact" id="contacto">
+
+        <div class="section-title">
+
+            <span>📩 CONTACTO</span>
+
+            <h2>¿Quieres más información?</h2>
+
+            <p>
+                Déjanos tus datos y te contactaremos.
+            </p>
+
+        </div>
+
+
+        <form id="contactForm">
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Tu nombre"
+                required
+            >
+
+            <input
+                type="tel"
+                id="telefono"
+                placeholder="Número de WhatsApp"
+                required
+            >
+
+            <select id="interes" required>
+
+                <option value="">
+                    ¿Qué te interesa?
+                </option>
+
+                <option value="empleo">
+                    💼 Empleo
+                </option>
+
+                <option value="prestamo">
+                    💰 Préstamo
+                </option>
+
+                <option value="ambos">
+                    💼💰 Ambos
+                </option>
+
+            </select>
+
+
+            <textarea
+                id="mensaje"
+                placeholder="Escribe tu mensaje..."
+                rows="4">
+            </textarea>
+
+
+            <button type="submit" class="btn primary full">
+                Enviar solicitud
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- WHATSAPP -->
+    <a
+        class="whatsapp"
+        id="whatsappBtn"
+        href="#"
+        target="_blank"
+        aria-label="WhatsApp">
+        💬
+    </a>
+
+
+    <!-- PIE -->
+    <footer>
+
+        <h3>OPORTUNIDADES</h3>
+
+        <p>
+            Empleo · Préstamos · Información
+        </p>
+
+        <small>
+            © 2026 Todos los derechos reservados.
+        </small>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+  </html>
