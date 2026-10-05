@@ -1,631 +1,1005 @@
-*         font-size: 17px;
-    }
+/* ================================
+   CONFIGURACIÓN GENERAL
+================================ */
 
-    * {
-  box-sizing: border-box;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-
-:root {
-
-  --verde: #1f6b2d;
-
-  --verde-oscuro: #185823;
-
-  --fondo: #f7f5ee;
-
-  --naranja: #e86b14;
-
-  --texto: #292722;
-
-  --gris: #6f6b63;
-
-  --borde: #d9ddd7;
-
-  --blanco: #ffffff;
-
+html {
+    scroll-behavior: smooth;
 }
-
 
 body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-  margin: 0;
+    background: #f5f3eb;
 
-  min-height: 100vh;
+    color: #29231f;
 
-  background: var(--fondo);
-
-  color: var(--texto);
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
+    min-height: 100vh;
 }
 
 
-/* BARRA SUPERIOR */
+/* ================================
+   ENCABEZADO
+================================ */
 
 .topbar {
 
-  height: 80px;
+    position: sticky;
 
-  padding:
-    0 7%;
+    top: 0;
 
-  display: flex;
+    z-index: 1000;
 
-  align-items: center;
+    height: 92px;
 
-  justify-content: space-between;
+    background: rgba(248, 247, 240, 0.97);
 
-  background: rgba(255,255,255,0.96);
+    border-bottom: 1px solid #deddd5;
 
-  border-bottom:
-    1px solid #e5e1d8;
+    display: flex;
 
-  position: sticky;
+    align-items: center;
 
-  top: 0;
+    justify-content: space-between;
 
-  z-index: 10;
+    padding: 0 28px;
 
+    backdrop-filter: blur(10px);
 }
 
 
-.brand {
+.logo-area {
 
-  display: flex;
+    display: flex;
 
-  align-items: center;
+    align-items: center;
 
-  gap: 12px;
+    gap: 14px;
 
-  font-weight: 700;
+    font-size: 28px;
 
-  font-size: 19px;
-
+    font-weight: 700;
 }
 
 
-.logo {
+.logo-icon {
 
-  width: 35px;
+    width: 54px;
 
-  height: 35px;
+    height: 54px;
 
-  border-radius: 50%;
+    border-radius: 50%;
 
-  display: grid;
+    background: #176b2a;
 
-  place-items: center;
+    color: white;
 
-  color: white;
+    display: flex;
 
-  background: var(--verde);
+    align-items: center;
 
-  font-size: 20px;
+    justify-content: center;
 
+    font-size: 30px;
+
+    font-weight: bold;
 }
 
 
-.top-btn {
+.header-button {
 
-  border: none;
+    border: none;
 
-  background: var(--verde);
+    background: #176b2a;
 
-  color: white;
+    color: white;
 
-  padding:
-    13px 23px;
+    font-size: 20px;
 
-  border-radius: 8px;
+    font-weight: 600;
 
-  font-weight: 700;
+    border-radius: 10px;
 
-  cursor: pointer;
+    padding: 17px 28px;
 
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
 
-.top-btn:hover {
-
-  background: var(--verde-oscuro);
-
+.header-button:hover {
+    background: #115620;
 }
 
 
-
-/* CONTENEDOR */
+/* ================================
+   PANTALLAS
+================================ */
 
 main {
-
-  width: min(680px, 92%);
-
-  margin:
-    50px auto;
-
+    min-height: calc(100vh - 92px);
 }
 
 
-.step {
+.pantalla {
 
-  display: none;
+    display: none;
 
-  animation:
-    aparecer 0.25s ease;
+    min-height: calc(100vh - 92px);
 
+    padding: 70px 28px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    animation: aparecer 0.35s ease;
 }
 
 
-.step.active {
-
-  display: block;
-
+.pantalla.activa {
+    display: flex;
 }
 
 
+@keyframes aparecer {
 
-/* HERO */
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ================================
+   PRIMERA PANTALLA
+================================ */
+
+#paso1 {
+    justify-content: flex-start;
+
+    text-align: center;
+
+    padding-top: 35px;
+}
+
+
+.disponibles {
+
+    background: white;
+
+    border: 1px solid #d6ddd6;
+
+    border-radius: 40px;
+
+    padding: 15px 25px;
+
+    font-size: 18px;
+
+    color: #6c6864;
+
+    margin-bottom: 42px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+
+
+.punto {
+
+    width: 13px;
+
+    height: 13px;
+
+    background: #80ad8b;
+
+    border-radius: 50%;
+}
+
 
 .hero {
 
-  text-align: center;
+    max-width: 650px;
 
-}
-
-
-.badge {
-
-  display: inline-block;
-
-  background: white;
-
-  border:
-    1px solid var(--borde);
-
-  border-radius: 30px;
-
-  padding:
-    10px 17px;
-
-  color: var(--gris);
-
-  margin-bottom: 25px;
-
+    margin: auto;
 }
 
 
 .hero h1 {
 
-  font-size:
-    clamp(35px, 7vw, 58px);
+    font-size: 58px;
 
-  line-height: 1.05;
+    line-height: 1.05;
 
-  margin:
-    0 0 22px;
+    margin-bottom: 45px;
 
+    font-weight: 800;
 }
 
 
-.hero h1 span {
+.hero h1 strong {
 
-  display: block;
+    display: block;
 
-  color: var(--verde);
-
+    color: #176b2a;
 }
 
 
 .hero p {
 
-  color: var(--gris);
+    color: #706963;
 
-  line-height: 1.6;
+    font-size: 23px;
 
-  font-size: 17px;
+    line-height: 1.55;
 
+    margin-bottom: 10px;
 }
 
 
+/* ================================
+   SALARIO
+================================ */
 
-/* SALARIO */
+.salario {
 
-.salary {
+    width: min(620px, 100%);
 
-  margin:
-    35px auto;
+    background: white;
 
-  padding: 27px;
+    border: 1px solid #dedbd2;
 
-  max-width: 470px;
+    border-radius: 20px;
 
-  background: white;
+    padding: 42px 25px;
 
-  border:
-    1px solid #ddd9d0;
+    margin: 50px auto 0;
 
-  border-radius: 17px;
+    box-shadow:
+        0 3px 6px rgba(0,0,0,.08);
 
-  box-shadow:
-    0 8px 25px rgba(0,0,0,.07);
+    display: flex;
 
+    flex-direction: column;
+
+    gap: 10px;
 }
 
 
-.salary small {
+.salario span {
 
-  display: block;
+    font-size: 18px;
 
-  color: var(--gris);
+    color: #6e6863;
 
+    font-weight: 600;
 }
 
 
-.salary strong {
+.salario strong {
 
-  display: block;
+    font-size: 47px;
 
-  margin:
-    8px 0;
-
-  color: var(--naranja);
-
-  font-size: 34px;
-
+    color: #e4660a;
 }
 
 
-.salary span {
+.salario small {
 
-  color: var(--gris);
+    font-size: 19px;
 
+    color: #716b67;
 }
 
 
+.llamada {
 
-/* TARJETA */
+    margin-top: 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.llamada p {
+
+    color: #6c6662;
+
+    font-size: 19px;
+}
+
+
+.flecha {
+
+    font-size: 40px;
+
+    color: #e4660a;
+
+    line-height: 1;
+}
+
+
+.orange-button {
+
+    border: none;
+
+    background: #ec650b;
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    padding: 19px 55px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    margin-top: 10px;
+}
+
+
+.orange-button:hover {
+
+    background: #d95807;
+
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   TARJETAS
+================================ */
 
 .card {
 
-  max-width: 520px;
+    width: min(620px, 100%);
 
-  margin: auto;
+    background: white;
 
-  background: var(--blanco);
+    border: 1px solid #dadbd4;
 
-  border:
-    1px solid #ddd9d0;
+    border-radius: 25px;
 
-  border-radius: 17px;
+    padding: 60px 55px;
 
-  padding:
-    36px 30px;
+    box-shadow:
+        0 12px 28px rgba(40,35,30,.10);
 
-  box-shadow:
-    0 10px 28px rgba(0,0,0,.08);
-
-  text-align: center;
-
+    text-align: center;
 }
 
 
 .card h2 {
 
-  margin:
-    0 0 8px;
+    font-size: 35px;
 
-  font-size: 25px;
+    margin-bottom: 18px;
 
+    font-weight: 800;
 }
 
 
-.card > p {
+.subtitulo {
 
-  color: var(--gris);
+    color: #706b67;
 
-  line-height: 1.5;
+    font-size: 22px;
 
+    line-height: 1.45;
+
+    margin-bottom: 45px;
 }
 
 
+/* ================================
+   FORMULARIO
+================================ */
 
-/* CAMPOS */
+.formulario {
 
-label {
+    text-align: left;
+}
 
-  display: block;
 
-  text-align: left;
+.formulario h2,
+.formulario .subtitulo {
 
-  margin:
-    17px 0;
+    text-align: center;
+}
 
-  font-weight: 700;
 
-  font-size: 14px;
+.formulario label {
 
+    display: block;
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    margin: 25px 0 10px;
 }
 
 
 input {
 
-  display: block;
+    width: 100%;
 
-  width: 100%;
+    height: 62px;
 
-  margin-top: 8px;
+    border: none;
 
-  border:
-    1px solid #dedbd4;
+    outline: none;
 
-  border-radius: 8px;
+    border-radius: 12px;
 
-  background: #f3f1ec;
+    background: #f0eee8;
 
-  padding: 14px;
+    padding: 0 22px;
 
-  font-size: 15px;
+    font-size: 20px;
 
-  outline: none;
+    color: #37322f;
 
+    box-shadow:
+        0 2px 5px rgba(0,0,0,.05);
+
+    transition: 0.2s;
 }
 
 
 input:focus {
 
-  border-color: var(--verde);
+    background: white;
 
-  background: white;
-
+    box-shadow:
+        0 0 0 2px #176b2a;
 }
 
 
+input::placeholder {
 
-/* BOTONES */
-
-.primary {
-
-  width: 100%;
-
-  border: none;
-
-  border-radius: 8px;
-
-  padding: 15px 18px;
-
-  background: var(--verde);
-
-  color: white;
-
-  font-size: 15px;
-
-  font-weight: 700;
-
-  cursor: pointer;
-
-  text-decoration: none;
-
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 12px;
-
+    color: #716b66;
 }
 
 
-.primary:hover {
+.green-button {
 
-  background: var(--verde-oscuro);
+    width: 100%;
 
+    border: none;
+
+    background: #176b2a;
+
+    color: white;
+
+    height: 62px;
+
+    border-radius: 12px;
+
+    margin-top: 30px;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
 
-.choices {
+.green-button:hover {
 
-  display: grid;
-
-  gap: 12px;
-
-  margin-top: 25px;
-
+    background: #115620;
 }
 
 
-.choice {
+.green-button span,
+.red-button span {
 
-  padding: 15px;
+    margin-left: 18px;
 
-  border:
-    1px solid #ccd5cc;
-
-  background: white;
-
-  border-radius: 8px;
-
-  font-weight: 700;
-
-  cursor: pointer;
-
+    font-size: 27px;
 }
 
 
-.choice:hover {
+/* ================================
+   ICONOS
+================================ */
 
-  border-color: var(--verde);
+.icon-circle {
 
-  background: #f4f8f3;
+    width: 96px;
 
+    height: 96px;
+
+    border-radius: 50%;
+
+    margin: 0 auto 32px;
+
+    background: #eaf2eb;
+
+    color: #176b2a;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 45px;
+
+    font-weight: 600;
 }
 
 
+/* ================================
+   PREGUNTAS
+================================ */
 
-/* ICONOS */
+.pregunta p {
 
-.icon {
+    color: #6c6661;
 
-  margin:
-    0 auto 18px;
+    font-size: 23px;
 
-  width: 50px;
+    line-height: 1.5;
 
-  height: 50px;
+    margin: 25px auto 40px;
 
-  border-radius: 50%;
-
-  display: grid;
-
-  place-items: center;
-
-  background: #edf4ed;
-
-  color: var(--verde);
-
-  font-size: 23px;
-
+    max-width: 500px;
 }
 
 
+.option-button {
 
-/* INFORMACIÓN */
+    width: 100%;
 
-.info-box {
+    height: 64px;
 
-  text-align: left;
+    background: white;
 
-  background: #f3f5f2;
-    padding: 17px;
+    border: 3px solid #d7e0d8;
 
-  border-radius: 10px;
+    border-radius: 12px;
 
-  margin:
-    22px 0;
+    font-size: 21px;
 
+    font-weight: 600;
+
+    color: #29231f;
+
+    margin-top: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
 
-.notice {
+.option-button:hover {
 
-  text-align: left;
+    border-color: #176b2a;
 
-  background: #fff9e9;
-
-  border:
-    1px solid #eee0a6;
-
-  padding: 17px;
-
-  border-radius: 10px;
-
-  margin:
-    22px 0;
-
-  color: #6b4c20;
-
-  line-height: 1.5;
-
+    background: #f4f8f4;
 }
 
 
-.notice p {
+/* ================================
+   ENTREVISTA
+================================ */
 
-  margin-bottom: 0;
+.entrevista > p {
 
+    color: #6c6661;
+
+    font-size: 22px;
+
+    line-height: 1.5;
+
+    margin-bottom: 35px;
 }
 
 
+.datos-entrevista {
 
-/* FOOTER */
+    text-align: left;
+
+    background: #f4f6f3;
+
+    border-radius: 17px;
+
+    padding: 25px;
+
+    margin-top: 15px;
+}
+
+
+.datos-entrevista strong {
+
+    display: block;
+
+    font-size: 19px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+.datos-entrevista label {
+
+    display: block;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin: 18px 0 8px;
+}
+
+
+/* ================================
+   AVISO FINAL
+================================ */
+
+.final-card {
+
+    padding-bottom: 50px;
+}
+
+
+.final-card > p {
+
+    color: #6d6762;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+
+.aviso {
+
+    text-align: left;
+
+    background: #fffbea;
+
+    border: 1px solid #eadf9e;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    margin: 25px 0;
+}
+
+
+.aviso strong {
+
+    color: #70441c;
+
+    font-size: 19px;
+}
+
+
+.aviso p {
+
+    color: #70441c;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    margin-top: 10px;
+}
+
+
+.red-button {
+
+    width: 100%;
+
+    height: 64px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #e00000;
+
+    color: white;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.red-button:hover {
+
+    background: #c90000;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
 
 footer {
 
-  text-align: center;
+    background: white;
 
-  color: var(--gris);
+    border-top: 1px solid #deddd5;
 
-  padding:
-    30px 15px 45px;
+    min-height: 230px;
 
-  font-size: 13px;
+    padding: 50px 20px;
 
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 30px;
+
+    text-align: center;
 }
 
 
+.footer-logo {
 
-/* ANIMACIÓN */
+    display: flex;
 
-@keyframes aparecer {
+    align-items: center;
 
-  from {
+    gap: 14px;
 
-    opacity: 0;
-
-    transform:
-      translateY(8px);
-
-  }
-
-  to {
-
-    opacity: 1;
-
-    transform:
-      translateY(0);
-
-  }
-
+    font-size: 28px;
 }
 
 
+.footer-logo .logo-icon {
 
-/* CELULAR */
+    width: 55px;
+
+    height: 55px;
+}
+
+
+footer p {
+
+    color: #706a65;
+
+    font-size: 18px;
+}
+
+
+/* ================================
+   CELULARES
+================================ */
 
 @media (max-width: 600px) {
 
-  .topbar {
+    .topbar {
 
-    padding:
-      0 4%;
+        height: 88px;
 
-    height: 70px;
-
-  }
+        padding: 0 20px;
+    }
 
 
-  .brand {
+    .logo-area {
 
-    font-size: 16px;
+        font-size: 22px;
 
-  }
-
-
-  .top-btn {
-
-    padding:
-      11px 15px;
-
-  }
+        gap: 10px;
+    }
 
 
-  main {
+    .logo-icon {
 
-    margin:
-      30px auto;
+        width: 48px;
 
-  }
+        height: 48px;
+
+        font-size: 25px;
+    }
 
 
-  .card {
+    .header-button {
 
-    padding:
-      28px 20px;
+        font-size: 17px;
 
-  }
+        padding: 15px 20px;
+    }
 
+
+    .pantalla {
+
+        padding: 55px 28px;
+    }
+
+
+    #paso1 {
+
+        padding-top: 35px;
+    }
+
+
+    .disponibles {
+
+        font-size: 16px;
+
+        padding: 13px 20px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 47px;
+
+        margin-bottom: 40px;
+    }
+
+
+    .hero p {
+
+        font-size: 20px;
+
+        line-height: 1.6;
+    }
+
+
+    .salario {
+
+        margin-top: 42px;
+
+        padding: 35px 18px;
+    }
+
+
+    .salario strong {
+
+        font-size: 39px;
+    }
+
+
+    .card {
+
+        padding: 45px 28px;
+
+        border-radius: 23px;
+    }
+
+
+    .card h2 {
+
+        font-size: 31px;
+    }
+
+
+    .subtitulo {
+
+        font-size: 20px;
+    }
+
+
+    .pregunta p {
+
+        font-size: 20px;
+    }
+
+
+    input {
+
+        height: 60px;
+
+        font-size: 18px;
+    }
+
+
+    .green-button,
+    .red-button {
+
+        height: 60px;
+    }
+
+
+    footer {
+
+        min-height: 210px;
+
+        padding: 45px 20px;
+    }
+
+
+    footer p {
+
+        font-size: 16px;
+    }
+}
+
+
+/* ================================
+   PANTALLAS MUY PEQUEÑAS
+================================ */
+
+@media (max-width: 380px) {
+
+    .topbar {
+
+        padding: 0 14px;
+    }
+
+
+    .logo-area {
+
+        font-size: 19px;
+    }
+
+
+    .header-button {
+
+        font-size: 15px;
+
+        padding: 13px 16px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 40px;
+    }
+
+
+    .hero p {
+
+        font-size: 18px;
+    }
+
+
+    .salario strong {
+
+        font-size: 33px;
+    }
 }
