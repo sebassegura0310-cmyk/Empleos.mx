@@ -1,141 +1,198 @@
-// ==========================================
-// CONFIGURACIÓN
-// ==========================================
+/*
+====================================================
+CONFIGURACIÓN DEL ENLACE FINAL
+====================================================
 
-// IMPORTANTE:
-// Escribe tu número de WhatsApp con código de país.
-// Colombia = 57
-//
-// Ejemplo:
-// 573001234567
+CAMBIA ESTA DIRECCIÓN POR EL ENLACE LEGÍTIMO
+AL QUE QUIERAS DIRIGIR AL USUARIO.
 
-const NUMERO_WHATSAPP = "573001234567";
+Ejemplo:
 
+const ENLACE_FINAL = "https://tusitio.com/";
 
-// ==========================================
-// MENÚ MÓVIL
-// ==========================================
+*/
 
-const menuBtn = document.getElementById("menuBtn");
-const nav = document.getElementById("nav");
-
-menuBtn.addEventListener("click", () => {
-
-    nav.classList.toggle("active");
-
-});
+const ENLACE_FINAL = "https://example.com/";
 
 
-// ==========================================
-// BOTÓN WHATSAPP
-// ==========================================
 
-const whatsappBtn =
-    document.getElementById("whatsappBtn");
+/*
+====================================================
+CONTROL DE PASOS
+====================================================
+*/
 
-const mensajeInicial =
-    "Hola, quiero recibir información sobre las oportunidades disponibles.";
+const pasos = document.querySelectorAll(".step");
 
-whatsappBtn.href =
-    `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensajeInicial)}`;
+let pasoActual = 0;
 
 
-// ==========================================
-// POSTULARSE A EMPLEO
-// ==========================================
 
-function postularEmpleo() {
+/*
+====================================================
+MOSTRAR PASO
+====================================================
+*/
 
-    const mensaje =
-        "Hola, estoy interesado/a en la oportunidad de empleo. Quiero conocer los requisitos y cómo puedo postularme.";
+function irAlPaso(numero) {
 
-    abrirWhatsApp(mensaje);
-}
+  if (numero < 0) {
+    numero = 0;
+  }
 
-
-// ==========================================
-// SOLICITAR PRÉSTAMO
-// ==========================================
-
-function solicitarPrestamo(monto) {
-
-    const mensaje =
-        `Hola, estoy interesado/a en consultar un préstamo de ${monto}. Quiero conocer los requisitos, condiciones y disponibilidad.`;
-
-    abrirWhatsApp(mensaje);
-}
+  if (numero >= pasos.length) {
+    numero = pasos.length - 1;
+  }
 
 
-// ==========================================
-// ABRIR WHATSAPP
-// ==========================================
+  pasos.forEach(function(paso, indice) {
 
-function abrirWhatsApp(mensaje) {
+    if (indice === numero) {
 
-    const url =
-        `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
-
-    window.open(url, "_blank");
-
-}
-
-
-// ==========================================
-// FORMULARIO
-// ==========================================
-
-const contactForm =
-    document.getElementById("contactForm");
-
-contactForm.addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-
-    const nombre =
-        document.getElementById("nombre").value.trim();
-
-    const telefono =
-        document.getElementById("telefono").value.trim();
-
-    const interes =
-        document.getElementById("interes").value;
-
-    const mensaje =
-        document.getElementById("mensaje").value.trim();
-
-
-    let textoInteres = "";
-
-    if (interes === "empleo") {
-
-        textoInteres = "una oportunidad de empleo";
-
-    } else if (interes === "prestamo") {
-
-        textoInteres = "un préstamo";
+      paso.classList.add("active");
 
     } else {
 
-        textoInteres =
-            "una oportunidad de empleo y un préstamo";
+      paso.classList.remove("active");
 
     }
 
-
-    const texto = `
-Hola, mi nombre es ${nombre}.
-
-Estoy interesado/a en ${textoInteres}.
-
-Mi número de contacto es:
-${telefono}
-
-Mensaje:
-${mensaje || "Sin mensaje adicional."}
-    `;
+  });
 
 
-    abrirWhatsApp(texto);
+  pasoActual = numero;
 
-});
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+}
+
+
+
+/*
+====================================================
+FORMULARIO
+====================================================
+*/
+
+function continuarDesdeFormulario() {
+
+  const nombre =
+    document.getElementById("nombre").value.trim();
+
+  const telefono =
+    document.getElementById("telefono").value.trim();
+
+  const ciudad =
+    document.getElementById("ciudad").value.trim();
+
+
+  if (
+    nombre === "" ||
+    telefono === "" ||
+    ciudad === ""
+  ) {
+
+    alert(
+      "Completa todos los campos para continuar."
+    );
+
+    return;
+
+  }
+
+
+  /*
+  IMPORTANTE:
+
+  Los datos solamente se utilizan
+  para validar que los campos no estén vacíos.
+
+  No se envían a ningún servidor.
+  */
+
+
+  irAlPaso(2);
+
+}
+
+
+
+/*
+====================================================
+ENTREVISTA
+====================================================
+*/
+
+function continuarEntrevista() {
+
+  const fecha =
+    document.getElementById("fecha").value;
+
+  const hora =
+    document.getElementById("hora").value;
+
+
+  if (
+    fecha === "" ||
+    hora === ""
+  ) {
+
+    alert(
+      "Selecciona una fecha y una hora para continuar."
+    );
+
+    return;
+
+  }
+
+
+  irAlPaso(4);
+
+}
+
+
+
+/*
+====================================================
+CONFIGURAR BOTÓN FINAL
+====================================================
+*/
+
+const botonFinal =
+  document.getElementById("enlaceFinal");
+
+
+if (botonFinal) {
+
+  botonFinal.href = ENLACE_FINAL;
+
+}
+
+
+
+/*
+====================================================
+BOTÓN SUPERIOR
+====================================================
+*/
+
+const botonSuperior =
+  document.querySelector(".top-btn");
+
+
+if (botonSuperior) {
+
+  botonSuperior.addEventListener(
+    "click",
+    function() {
+
+      irAlPaso(1);
+
+    }
+  );
+
+}
