@@ -1,361 +1,369 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Portal de Postulación</title>
+    <title>BodegaDemo - Postulación</title>
 
-  <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
 
-  <header class="topbar">
-
-    <div class="brand">
-      <div class="logo">◇</div>
-      <span>Portal de Postulación</span>
+<header class="topbar">
+    <div class="logo-area">
+        <div class="logo-icon">◇</div>
+        <span>BodegaDemo</span>
     </div>
 
-    <button class="top-btn" onclick="irAlPaso(1)">
-      Postularme
+    <button class="header-button" onclick="irAlInicio()">
+        Postularme
     </button>
-
-  </header>
-
-
-  <main>
+</header>
 
 
-    <!-- PASO 1 -->
+<main>
 
-    <section class="step active" data-step="0">
+    <!-- =========================
+         PASO 1
+    ========================== -->
 
-      <div class="hero">
+    <section id="paso1" class="pantalla activa">
 
-        <div class="badge">
-          ● Vacantes disponibles
+        <div class="disponibles">
+            <span class="punto"></span>
+            Vacantes disponibles
         </div>
 
-        <h1>
-          Bienvenido a
-          <span>Portal de Postulación</span>
-        </h1>
+        <div class="hero">
 
-        <p>
-          Completa el proceso de postulación y revisa la información
-          antes de continuar.
-        </p>
+            <h1>
+                Bienvenido a
+                <strong>BodegaDemo</strong>
+            </h1>
 
+            <p>
+                Genera ingresos desde la comodidad de tu hogar
+                empacando y organizando productos como cosméticos,
+                juguetes, accesorios de cocina, productos comestibles
+                y más.
+            </p>
 
-        <div class="salary">
-
-          <small>INGRESO SEMANAL</small>
-
-          <strong>
-            $4,000 pesos
-          </strong>
-
-          <span>
-            Pagos puntuales cada semana
-          </span>
+            <p>
+                Nosotros nos encargamos de llevarte los productos
+                y recogerlos una vez listos.
+            </p>
 
         </div>
 
 
-        <button class="primary" onclick="irAlPaso(1)">
-          Postularme
-          <b>→</b>
-        </button>
+        <div class="salario">
 
-      </div>
+            <span>SALARIO SEMANAL</span>
+
+            <strong>$4,000 pesos</strong>
+
+            <small>
+                Pagos puntuales cada semana
+            </small>
+
+        </div>
+
+
+        <div class="llamada">
+
+            <p>
+                Si quieres postularte presiona aquí
+            </p>
+
+            <div class="flecha">
+                ↓
+            </div>
+
+            <button class="orange-button" onclick="mostrarPaso(2)">
+                Postularme
+            </button>
+
+        </div>
 
     </section>
 
 
+    <!-- =========================
+         PASO 2
+    ========================== -->
 
-    <!-- PASO 2 -->
+    <section id="paso2" class="pantalla">
 
-    <section class="step" data-step="1">
+        <div class="card formulario">
 
-      <div class="card">
+            <h2>¡Postúlate ahora!</h2>
 
-        <h2>
-          ¡Postúlate ahora!
-        </h2>
-
-        <p>
-          Completa tus datos para continuar.
-        </p>
-
-
-        <label>
-          Nombre completo
-
-          <input
-            id="nombre"
-            type="text"
-            placeholder="Ej: María García López"
-          >
-
-        </label>
+            <p class="subtitulo">
+                Completa tus datos y te contactaremos pronto
+            </p>
 
 
-        <label>
-          Teléfono / WhatsApp
-
-          <input
-            id="telefono"
-            type="tel"
-            placeholder="Ej: 55 1234 5678"
-          >
-
-        </label>
-
-
-        <label>
-          Ciudad / Estado
-
-          <input
-            id="ciudad"
-            type="text"
-            placeholder="Ej: Ciudad de México"
-          >
-
-        </label>
-
-
-        <button
-          class="primary"
-          onclick="continuarDesdeFormulario()"
-        >
-          Continuar
-          <b>→</b>
-        </button>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- PASO 3 -->
-
-    <section class="step" data-step="2">
-
-      <div class="card">
-
-        <div class="icon">
-          ☎
-        </div>
-
-        <h2>
-          Información adicional
-        </h2>
-
-        <p>
-          ¿Tienes alguna discapacidad física de la que debamos enterarnos?
-        </p>
-
-
-        <div class="choices">
-
-          <button
-            class="choice"
-            onclick="irAlPaso(3)"
-          >
-            No
-          </button>
-
-
-          <button
-            class="choice"
-            onclick="irAlPaso(3)"
-          >
-            Sí
-          </button>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- PASO 4 -->
-
-    <section class="step" data-step="3">
-
-      <div class="card">
-
-        <div class="icon">
-          ▣
-        </div>
-
-        <h2>
-          Entrevista telefónica
-        </h2>
-
-        <p>
-          ¿Estás de acuerdo en que te llamemos para una entrevista
-          por teléfono?
-        </p>
-
-
-        <div class="info-box">
-
-          <strong>
-            ¿Qué día y hora estás disponible para que te llamemos?
-          </strong>
-
-
-          <label>
-            Fecha disponible
+            <label>
+                Nombre completo
+            </label>
 
             <input
-              id="fecha"
-              type="date"
+                type="text"
+                id="nombre"
+                placeholder="Ej: María García López"
+                autocomplete="off"
             >
 
-          </label>
 
-
-          <label>
-            Hora disponible
+            <label>
+                Teléfono / WhatsApp
+            </label>
 
             <input
-              id="hora"
-              type="time"
+                type="tel"
+                id="telefono"
+                placeholder="Ej: 55 1234 5678"
+                autocomplete="off"
             >
 
-          </label>
+
+            <label>
+                Ciudad / Estado
+            </label>
+
+            <input
+                type="text"
+                id="ciudad"
+                placeholder="Ej: Ciudad de México"
+                autocomplete="off"
+            >
+
+
+            <button class="green-button" onclick="continuarFormulario()">
+                Postularme
+                <span>→</span>
+            </button>
 
         </div>
-
-
-        <button
-          class="primary"
-          onclick="continuarEntrevista()"
-        >
-          Continuar
-          <b>→</b>
-        </button>
-
-      </div>
 
     </section>
 
 
+    <!-- =========================
+         PASO 3
+    ========================== -->
 
-    <!-- PASO 5 -->
+    <section id="paso3" class="pantalla">
 
-    <section class="step" data-step="4">
+        <div class="card pregunta">
 
-      <div class="card">
+            <div class="icon-circle">
+                ☎
+            </div>
 
-        <div class="icon">
-          ▤
-        </div>
+            <h2>
+                Una pregunta importante
+            </h2>
 
-        <h2>
-          Información para el pago
-              </h2>
-              <p>
-          ¿Tienes una cuenta bancaria para recibir pagos?
-        </p>
-
-
-        <div class="choices">
-
-          <button
-            class="choice"
-            onclick="irAlPaso(5)"
-          >
-            No
-          </button>
+            <p>
+                ¿Tienes alguna discapacidad física de la
+                que debamos enterarnos?
+            </p>
 
 
-          <button
-            class="choice"
-            onclick="irAlPaso(5)"
-          >
-            Sí
-          </button>
+            <button class="option-button" onclick="mostrarPaso(4)">
+                No
+            </button>
+
+            <button class="option-button" onclick="mostrarPaso(4)">
+                Sí
+            </button>
 
         </div>
-
-      </div>
 
     </section>
 
 
+    <!-- =========================
+         PASO 4
+    ========================== -->
 
-    <!-- PASO FINAL -->
+    <section id="paso4" class="pantalla">
 
-    <section class="step" data-step="5">
+        <div class="card entrevista">
 
-      <div class="card">
+            <div class="icon-circle">
+                ▣
+            </div>
+            <h2>
+                Entrevista telefónica
+            </h2>
 
-        <div class="icon">
-          ✓
+            <p>
+                ¿Estás de acuerdo en que te llamemos
+                para una entrevista por teléfono?
+            </p>
+
+
+            <div class="datos-entrevista">
+
+                <strong>
+                    ¿Qué día y hora estás disponible para
+                    que te llamemos?
+                </strong>
+
+
+                <label>
+                    Fecha disponible
+                </label>
+
+                <input
+                    type="text"
+                    id="fecha"
+                    placeholder="Ej: Lunes 15 de Junio"
+                >
+
+
+                <label>
+                    Hora disponible
+                </label>
+
+                <input
+                    type="text"
+                    id="hora"
+                    placeholder="Ej: 10:00 AM"
+                >
+
+            </div>
+
+
+            <button class="green-button" onclick="continuarEntrevista()">
+                Enviar
+                <span>→</span>
+            </button>
+
         </div>
-
-
-        <h2>
-          Último paso
-        </h2>
-
-
-        <p>
-          Tu proceso está listo para continuar.
-        </p>
-
-
-        <div class="notice">
-
-          <strong>
-            Información importante
-          </strong>
-
-          <p>
-            Al pulsar el siguiente botón serás dirigido a un sitio
-            externo. Comprueba siempre que el sitio sea legítimo
-            antes de proporcionar información personal o financiera.
-          </p>
-
-        </div>
-
-
-        <a
-          id="enlaceFinal"
-          class="primary link-button"
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Continuar al sitio externo
-          <b>→</b>
-        </a>
-
-      </div>
 
     </section>
 
 
-  </main>
+    <!-- =========================
+         PASO 5
+    ========================== -->
+
+    <section id="paso5" class="pantalla">
+
+        <div class="card pregunta">
+
+            <div class="icon-circle">
+                ▭
+            </div>
+
+            <h2>
+                Cuenta bancaria
+            </h2>
+
+            <p>
+                ¿Tienes una cuenta bancaria para recibir
+                tus pagos?
+            </p>
 
 
+            <button class="option-button" onclick="mostrarPaso(6)">
+                No
+            </button>
 
-  <footer>
+            <button class="option-button" onclick="mostrarPaso(6)">
+                Sí
+            </button>
 
-    © 2026 Portal de Postulación · Plantilla demostrativa
+        </div>
 
-  </footer>
+    </section>
 
 
-  <script src="script.js"></script>
+    <!-- =========================
+         PASO 6
+    ========================== -->
+
+    <section id="paso6" class="pantalla">
+
+        <div class="card final-card">
+
+            <div class="icon-circle">
+                ✓
+            </div>
+
+            <h2>
+                ¡Postulación completada!
+            </h2>
+
+            <p>
+                Hemos terminado este proceso de demostración.
+                Para continuar, utiliza el botón que aparece
+                abajo.
+            </p>
+
+
+            <div class="aviso">
+
+                <strong>Información importante</strong>
+
+                <p>
+                    Este sitio es una demostración. No ingreses
+                    contraseñas, códigos de seguridad, números
+                    completos de tarjetas ni información bancaria
+                    confidencial.
+                </p>
+
+            </div>
+
+
+            <!--
+                CAMBIA ESTA URL POR TU DESTINO LEGÍTIMO.
+                Ejemplo:
+                https://tusitio.com
+            -->
+
+            <button
+                class="red-button"
+                onclick="irAlEnlace()"
+            >
+                Continuar
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+
+        <div class="logo-icon">
+            ◇
+        </div>
+
+        <strong>
+            BodegaDemo
+        </strong>
+
+    </div>
+
+    <p>
+        © 2026 BodegaDemo. Todos los derechos reservados.
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
