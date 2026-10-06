@@ -998,8 +998,7 @@ footer p {
    MENSAJE AMARILLO
 ========================================= */
 
-.mensaje-banco {
-    display: none;
+
 
     margin-top: 40px;
 
@@ -1020,8 +1019,7 @@ footer p {
     line-height: 1.65;
 }
 
-.mensaje-banco.visible {
-    display: block;
+
 }
 
 .mensaje-banco p {
