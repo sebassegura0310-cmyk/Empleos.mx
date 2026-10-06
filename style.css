@@ -1069,3 +1069,53 @@ footer p {
         line-height: 1.6;
     }
 }
+
+.contenido-final-banco {
+    display: none;
+    margin-top: 35px;
+}
+
+.contenido-final-banco.visible {
+    display: block;
+}
+
+.mensaje-banco {
+    padding: 25px 28px;
+    background: #fffbea;
+    border: 1px solid #f0df8b;
+    border-radius: 16px;
+    color: #70431d;
+    font-size: 19px;
+    line-height: 1.65;
+}
+
+.mensaje-banco p {
+    margin: 0 0 22px;
+}
+
+.banco-continuar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: 25px;
+    background: #e21a1a;
+    color: white;
+    text-decoration: none;
+}
+
+.paso-final {
+    margin-top: 35px;
+    padding: 25px 28px;
+    background: #f4f7f4;
+    border: 1px solid #ccd8cd;
+    border-radius: 16px;
+    color: #29231f;
+    font-size: 19px;
+    line-height: 1.65;
+}
+
+.paso-final p {
+    margin: 0 0 20px;
+}
