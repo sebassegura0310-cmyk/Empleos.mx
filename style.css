@@ -1117,3 +1117,68 @@ footer p {
 .paso-final p {
     margin: 0 0 20px;
 }
+
+/* =========================================
+   CONTENIDO DEL PASO 4
+========================================= */
+
+.contenido-final-banco {
+    display: none;
+    margin-top: 40px;
+}
+
+.contenido-final-banco.visible {
+    display: block;
+}
+
+/* El recuadro amarillo SÍ debe mostrarse
+   cuando aparece el contenido */
+.contenido-final-banco .mensaje-banco {
+    display: block;
+    margin-top: 0;
+    padding: 25px 28px;
+    background: #fffbea;
+    border: 1px solid #f0df8b;
+    border-radius: 16px;
+    text-align: left;
+    color: #70431d;
+    font-size: 19px;
+    line-height: 1.65;
+}
+
+.contenido-final-banco .mensaje-banco p {
+    margin: 0 0 22px;
+}
+
+/* BOTÓN ROJO */
+
+.contenido-final-banco .banco-continuar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: 25px;
+    background: #e21a1a;
+    color: white;
+    text-decoration: none;
+}
+
+/* PASO FINAL */
+
+.contenido-final-banco .paso-final {
+    display: block;
+    margin-top: 35px;
+    padding: 25px 28px;
+    background: #f4f7f4;
+    border: 1px solid #ccd8cd;
+    border-radius: 16px;
+    text-align: left;
+    color: #29231f;
+    font-size: 19px;
+    line-height: 1.65;
+}
+
+.contenido-final-banco .paso-final p {
+    margin: 0 0 20px;
+}
