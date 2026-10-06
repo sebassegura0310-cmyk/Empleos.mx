@@ -527,39 +527,79 @@
 
 
         <!-- =========================
-             PASO 4 - CONFIRMACIÓN
-        ========================== -->
-        <section id="paso-4" class="pantalla">
+     PASO 4 - CUENTA BANCARIA
+========================== -->
+<section id="paso-4" class="pantalla">
 
-            <div class="tarjeta pregunta">
+    <div class="tarjeta cuenta-bancaria">
 
-                <div class="icono">
-                    ✓
-                </div>
+        <h2>
+            Cuenta bancaria
+        </h2>
 
-                <h2>
-                    ¡Ya estamos finalizando!
-                </h2>
+        <p class="pregunta-banco">
+            ¿Tienes cuenta de banco?
+        </p>
 
-                <p>
-                    Has completado todos los pasos ahora es necesario que tengas una cuenta de Santander LIKeU, ya que la empresa tiene convenio exclusivo con este banco si no la tienes 
-                    
-                    no te te preocupes, cómo estás postulándote con nosotros, te ayudaremos a solicitarla ahora mismo para que no pierdas el puesto de trabajo, ya que es requisito de la empresa para la postulación. 
+        <div class="opciones banco-opciones">
 
-                    ingresa al botón siguiente que está aquí debajo para dirigirte a la página de Santander y solicites tu cuenta en solo 5 minutos.
-                </p>
+            <button
+                type="button"
+                class="opcion"
+                onclick="mostrarMensajeBanco()"
+            >
+                No
+            </button>
 
-                <button
-                    class="boton verde"
-                    onclick="irAPaso(5)"
-                >
-                    Continuar
-                    <span>→</span>
-                </button>
+            <button
+                type="button"
+                class="opcion"
+                onclick="mostrarMensajeBanco()"
+            >
+                Sí
+            </button>
 
-            </div>
+        </div>
 
-        </section>
+
+        <!-- MENSAJE AMARILLO -->
+        <div
+            id="mensaje-banco"
+            class="mensaje-banco"
+        >
+
+            <p>
+                <strong>Importante:</strong>
+                Es necesario contar con una cuenta bancaria
+                para recibir los pagos correspondientes.
+            </p>
+
+            <p>
+                Si todavía no tienes una cuenta, puedes
+                consultar las opciones disponibles y
+                completar el proceso directamente con
+                la entidad bancaria.
+            </p>
+
+            <p>
+                Una vez finalizado el proceso, podrás
+                continuar con tu postulación.
+            </p>
+
+            <button
+                type="button"
+                class="boton banco-continuar"
+                onclick="irAPaso(5)"
+            >
+                Continuar
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
 
 
         <!-- =========================
