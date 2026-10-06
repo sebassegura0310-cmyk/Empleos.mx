@@ -114,3 +114,24 @@ if (fecha) {
 
     fecha.min = `${año}-${mes}-${dia}`;
 }
+
+// ==========================================
+// MOSTRAR MENSAJE DE CUENTA BANCARIA
+// ==========================================
+
+function mostrarMensajeBanco() {
+
+    const mensaje = document.getElementById("mensaje-banco");
+
+    if (mensaje) {
+        mensaje.classList.add("visible");
+
+        // Desplazarse suavemente hasta el mensaje
+        setTimeout(function() {
+            mensaje.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }, 100);
+    }
+}
