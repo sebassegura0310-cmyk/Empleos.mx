@@ -947,3 +947,125 @@ footer p {
         font-size: 20px;
     }
 }
+
+/* =========================================
+   PASO 4 - CUENTA BANCARIA
+========================================= */
+
+.cuenta-bancaria {
+    text-align: center;
+}
+
+.pregunta-banco {
+    color: #706963;
+
+    font-size: 25px;
+
+    line-height: 1.5;
+
+    margin: 25px 0 40px;
+}
+
+.banco-opciones {
+    gap: 20px;
+}
+
+.banco-opciones .opcion {
+    min-height: 90px;
+
+    font-size: 26px;
+
+    font-weight: bold;
+
+    transition:
+        border-color .2s,
+        background .2s,
+        transform .15s;
+}
+
+.banco-opciones .opcion:hover {
+    border-color: #1d6b2b;
+
+    background: #f1f6f1;
+}
+
+.banco-opciones .opcion:active {
+    transform: scale(.98);
+}
+
+
+/* =========================================
+   MENSAJE AMARILLO
+========================================= */
+
+.mensaje-banco {
+    display: none;
+
+    margin-top: 40px;
+
+    padding: 25px 28px;
+
+    background: #fffbea;
+
+    border: 1px solid #f0df8b;
+
+    border-radius: 16px;
+
+    text-align: left;
+
+    color: #70431d;
+
+    font-size: 19px;
+
+    line-height: 1.65;
+}
+
+.mensaje-banco.visible {
+    display: block;
+}
+
+.mensaje-banco p {
+    margin: 0 0 22px;
+}
+
+.mensaje-banco p:last-of-type {
+    margin-bottom: 25px;
+}
+
+.mensaje-banco strong {
+    font-weight: bold;
+}
+
+.banco-continuar {
+    background: #e21a1a;
+
+    color: white;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   MÓVIL - PASO 4
+========================================= */
+
+@media (max-width: 600px) {
+
+    .pregunta-banco {
+        font-size: 23px;
+    }
+
+    .banco-opciones .opcion {
+        min-height: 85px;
+
+        font-size: 24px;
+    }
+
+    .mensaje-banco {
+        padding: 22px;
+
+        font-size: 18px;
+
+        line-height: 1.6;
+    }
+}
