@@ -1,153 +1,334 @@
-/* =========================================
-   CONFIGURACIÓN DEL ENLACE FINAL
-========================================= */
 
-/*
-   CAMBIA SOLAMENTE ESTA DIRECCIÓN.
+const questions = [
+  {
+    title: "¿Cuál es tu rango de edad?",
+    hint: "Selecciona tu rango de edad.",
+    options: [
+      "18 - 24 años",
+      "25 - 34 años",
+      "35 - 44 años",
+      "45 años o más"
+    ]
+  },
+  {
+    title: "¿Qué idiomas hablas con fluidez?",
+    hint: "Elige la opción que mejor te describa.",
+    options: [
+      "Español",
+      "Inglés",
+      "Ambos (español e inglés)"
+    ]
+  },
+  {
+    title: "¿En qué horario prefieres realizar tareas?",
+    hint: "Selecciona tu horario preferido.",
+    options: [
+      "🌅 Mañana (6h - 12h)",
+      "☀️ Tarde (12h - 18h)",
+      "🌙 Noche (18h - 24h)"
+    ]
+  }
+];
 
-   Ejemplo:
+let currentStep = 0;
 
-   const ENLACE_FINAL = "https://ejemplo.com";
+const answers = [null, null, null];
 
-   El botón final abrirá esa dirección.
-*/
+const quizForm = document.getElementById("quizForm");
+const optionsBox = document.getElementById("options");
 
-const ENLACE_FINAL = "https://o.uvixs.com//tr?offer_id=1&aff_id=14";
+const questionTitle = document.getElementById("questionTitle");
+const questionHint = document.getElementById("questionHint");
+const stepLabel = document.getElementById("stepLabel");
+
+const nextButton = document.getElementById("nextButton");
+const backButton = document.getElementById("backButton");
+
+const quizError = document.getElementById("quizError");
+const loader = document.getElementById("loader");
+
+const resultModal = document.getElementById("resultModal");
+const registrationModal = document.getElementById("registrationModal");
 
 
-/* =========================================
-   CAMBIAR DE PASO
-========================================= */
+/* MOSTRAR PREGUNTAS */
 
-function irAPaso(numero) {
+function renderStep() {
 
-    // Ocultar todas las pantallas
-    const pantallas = document.querySelectorAll(".pantalla");
+  const question = questions[currentStep];
 
-    pantallas.forEach(function(pantalla) {
-        pantalla.classList.remove("activa");
+  questionTitle.textContent = question.title;
+  questionHint.textContent = question.hint;
+
+  stepLabel.textContent =
+    `PASO ${currentStep + 1} DE ${questions.length}`;
+
+  optionsBox.replaceChildren();
+
+  question.options.forEach((option) => {
+
+    const label = document.createElement("label");
+
+    label.className =
+      "option" +
+      (answers[currentStep] === option ? " selected" : "");
+
+    const radio = document.createElement("input");
+
+    radio.type = "radio";
+    radio.name = "answer";
+    radio.value = option;
+
+    radio.checked = answers[currentStep] === option;
+
+    radio.addEventListener("change", () => {
+
+      answers[currentStep] = option;
+
+      optionsBox.querySelectorAll(".option").forEach(el => {
+        el.classList.remove("selected");
+      });
+
+      label.classList.add("selected");
+
+      nextButton.disabled = false;
+
+      quizError.textContent = "";
+
     });
 
+    const text = document.createElement("span");
 
-    // Buscar la pantalla correspondiente
-    const destino = document.getElementById(
-        "paso-" + numero
+    text.textContent = option;
+
+    label.append(radio, text);
+
+    optionsBox.append(label);
+
+  });
+
+
+  /* BARRA DE PROGRESO */
+
+  document.querySelectorAll(".progress-step").forEach((bar, index) => {
+
+    bar.classList.toggle("done", index < currentStep);
+
+    bar.classList.toggle("active", index === currentStep);
+
+  });
+
+
+  backButton.hidden = currentStep === 0;
+
+  nextButton.textContent =
+    currentStep === questions.length - 1
+      ? "VER MI RESULTADO →"
+      : "SIGUIENTE →";
+
+  nextButton.disabled = !answers[currentStep];
+
+  quizError.textContent = "";
+
+}
+
+
+/* MOSTRAR VENTANAS */
+
+function showModal(modal) {
+
+  modal.classList.add("visible");
+
+  modal.setAttribute("aria-hidden", "false");
+
+  document.body.style.overflow = "hidden";
+
+}
+
+
+function hideModal(modal) {
+
+  modal.classList.remove("visible");
+
+  modal.setAttribute("aria-hidden", "true");
+
+  if (
+    ![resultModal, registrationModal].some(item =>
+      item.classList.contains("visible")
+    )
+  ) {
+    document.body.style.overflow = "";
+  }
+
+}
+
+
+/* ANIMACIÓN DE CARGA */
+
+function advanceWithLoader(callback) {
+
+  loader.classList.add("visible");
+
+  loader.setAttribute("aria-hidden", "false");
+
+  window.setTimeout(() => {
+
+    loader.classList.remove("visible");
+
+    loader.setAttribute("aria-hidden", "true");
+
+    callback();
+
+  }, 850);
+
+}
+
+
+/* BOTÓN SIGUIENTE */
+
+quizForm.addEventListener("submit", (event) => {
+
+  event.preventDefault();
+
+  if (!answers[currentStep]) {
+
+    quizError.textContent =
+      "Selecciona una respuesta para continuar.";
+
+    return;
+
+  }
+
+  if (currentStep < questions.length - 1) {
+
+    advanceWithLoader(() => {
+
+      currentStep++;
+
+      renderStep();
+
+      document.querySelector(".quiz-card").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    });
+
+  } else {
+
+    advanceWithLoader(() => {
+
+      showModal(resultModal);
+
+    });
+
+  }
+
+});
+
+
+/* BOTÓN VOLVER */
+
+backButton.addEventListener("click", () => {
+
+  if (currentStep > 0) {
+
+    currentStep--;
+
+    renderStep();
+
+  }
+
+});
+
+
+/* CONTINUAR AL REGISTRO */
+
+document
+  .getElementById("startRegistration")
+  .addEventListener("click", () => {
+
+    hideModal(resultModal);
+
+    showModal(registrationModal);
+
+  });
+
+
+/* CERRAR VENTANAS */
+
+document.querySelectorAll("[data-close]").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    hideModal(
+      document.getElementById(button.dataset.close)
     );
 
+  });
 
-    // Mostrarla
-    if (destino) {
+});
 
-        destino.classList.add("activa");
 
-        // Volver arriba
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+/* CERRAR AL TOCAR FUERA */
+
+document.querySelectorAll(".modal-overlay").forEach(overlay => {
+
+  overlay.addEventListener("click", event => {
+
+    if (event.target === overlay) {
+
+      hideModal(overlay);
+
     }
-}
+
+  });
+
+});
 
 
-/* =========================================
-   FORMULARIO DE DEMOSTRACIÓN
-========================================= */
+/* VALIDAR FORMULARIO */
 
-const formulario = document.getElementById("form-demo");
+document
+  .getElementById("registrationForm")
+  .addEventListener("submit", (event) => {
 
-if (formulario) {
+    event.preventDefault();
 
-    formulario.addEventListener("submit", function(event) {
+    const form = event.currentTarget;
 
-        // Evita que el navegador envíe el formulario
-        event.preventDefault();
+    const error =
+      document.getElementById("registrationError");
 
-        // NO se envían los datos a ningún servidor.
-        // Solo avanzamos a la siguiente pantalla.
-
-        irAPaso(2);
-    });
-}
-
-
-/* =========================================
-   BOTÓN FINAL
-========================================= */
-
-function abrirEnlaceFinal() {
-
-    if (
-        ENLACE_FINAL &&
-        ENLACE_FINAL !== "https://example.com"
-    ) {
-
-        window.location.href = ENLACE_FINAL;
-
-    } else {
-
-        alert(
-            "Configura primero ENLACE_FINAL en el archivo script.js."
-        );
+    if (!form.reportValidity()) {
+      return;
     }
-}
 
+    if (!document.getElementById("consent").checked) {
 
-/* =========================================
-   FECHA MÍNIMA
-========================================= */
+      error.textContent =
+        "Debes confirmar que deseas continuar.";
 
-const fecha = document.getElementById("fecha");
+      return;
 
-if (fecha) {
-
-    const hoy = new Date();
-
-    const año = hoy.getFullYear();
-
-    const mes = String(
-        hoy.getMonth() + 1
-    ).padStart(2, "0");
-
-    const dia = String(
-        hoy.getDate()
-    ).padStart(2, "0");
-
-    fecha.min = `${año}-${mes}-${dia}`;
-}
-
-// ==========================================
-// MOSTRAR MENSAJE DE CUENTA BANCARIA
-// ==========================================
-
-function mostrarMensajeBanco() {
-
-    const mensaje = document.getElementById("mensaje-banco");
-
-    if (mensaje) {
-        mensaje.classList.add("visible");
-
-        // Desplazarse suavemente hasta el mensaje
-        setTimeout(function() {
-            mensaje.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-        }, 100);
     }
-}
 
-function mostrarMensajeBanco() {
+    error.textContent = "";
 
-    const contenido = document.getElementById("contenido-final-banco");
+    document.getElementById("demoNote").textContent =
+      "Formulario validado correctamente. No se envió ni guardó información porque aún no está conectado a un servicio de recepción.";
 
-    if (contenido) {
-        contenido.classList.add("visible");
+    const submitButton =
+      form.querySelector("button[type='submit']");
 
-        setTimeout(function() {
-            contenido.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        }, 100);
-    }
-}
+    submitButton.textContent =
+      "FORMULARIO VALIDADO ✓";
+
+    submitButton.disabled = true;
+
+  });
+
+
+/* INICIAR PÁGINA */
+
+renderStep();
