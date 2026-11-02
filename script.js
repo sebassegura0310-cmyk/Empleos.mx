@@ -1,8 +1,18 @@
 
+/* =====================================
+   CONFIGURACIÓN DEL ENLACE FINAL
+===================================== */
+
+const ENLACE_FINAL = "PEGA_AQUI_TU_ENLACE";
+
+
+/* =====================================
+   PREGUNTAS
+===================================== */
+
 const questions = [
   {
     title: "¿Cuál es tu rango de edad?",
-    hint: "Selecciona tu rango de edad.",
     options: [
       "18 - 24 años",
       "25 - 34 años",
@@ -12,7 +22,6 @@ const questions = [
   },
   {
     title: "¿Qué idiomas hablas con fluidez?",
-    hint: "Elige la opción que mejor te describa.",
     options: [
       "Español",
       "Inglés",
@@ -21,7 +30,6 @@ const questions = [
   },
   {
     title: "¿En qué horario prefieres realizar tareas?",
-    hint: "Selecciona tu horario preferido.",
     options: [
       "🌅 Mañana (6h - 12h)",
       "☀️ Tarde (12h - 18h)",
@@ -30,63 +38,158 @@ const questions = [
   }
 ];
 
+
+/* =====================================
+   VARIABLES
+===================================== */
+
 let currentStep = 0;
 
 const answers = [null, null, null];
 
-const quizForm = document.getElementById("quizForm");
-const optionsBox = document.getElementById("options");
+const welcomeScreen =
+  document.getElementById("welcomeScreen");
 
-const questionTitle = document.getElementById("questionTitle");
-const questionHint = document.getElementById("questionHint");
-const stepLabel = document.getElementById("stepLabel");
+const quizScreen =
+  document.getElementById("quizScreen");
 
-const nextButton = document.getElementById("nextButton");
-const backButton = document.getElementById("backButton");
+const continueButton =
+  document.getElementById("continueButton");
 
-const quizError = document.getElementById("quizError");
-const loader = document.getElementById("loader");
+const quizForm =
+  document.getElementById("quizForm");
 
-const resultModal = document.getElementById("resultModal");
-const registrationModal = document.getElementById("registrationModal");
+const questionTitle =
+  document.getElementById("questionTitle");
+
+const questionHint =
+  document.getElementById("questionHint");
+
+const optionsBox =
+  document.getElementById("options");
+
+const stepLabel =
+  document.getElementById("stepLabel");
+
+const nextButton =
+  document.getElementById("nextButton");
+
+const backButton =
+  document.getElementById("backButton");
+
+const quizError =
+  document.getElementById("quizError");
+
+const loader =
+  document.getElementById("loader");
+
+const resultModal =
+  document.getElementById("resultModal");
 
 
-/* MOSTRAR PREGUNTAS */
+/* =====================================
+   ANIMACIÓN DE CARGA
+===================================== */
+
+function loading(callback) {
+
+  loader.classList.add("visible");
+
+  loader.setAttribute("aria-hidden", "false");
+
+  document.body.style.overflow = "hidden";
+
+  setTimeout(() => {
+
+    loader.classList.remove("visible");
+
+    loader.setAttribute("aria-hidden", "true");
+
+    document.body.style.overflow = "";
+
+    callback();
+
+  }, 850);
+
+}
+
+
+/* =====================================
+   BOTÓN CONTINUAR
+===================================== */
+
+continueButton.addEventListener("click", () => {
+
+  loading(() => {
+
+    welcomeScreen.hidden = true;
+
+    quizScreen.hidden = false;
+
+    currentStep = 0;
+
+    renderStep();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  });
+
+});
+
+
+/* =====================================
+   MOSTRAR PREGUNTAS
+===================================== */
 
 function renderStep() {
 
   const question = questions[currentStep];
 
   questionTitle.textContent = question.title;
-  questionHint.textContent = question.hint;
+
+  questionHint.textContent =
+    "Selecciona una de las siguientes opciones.";
 
   stepLabel.textContent =
-    `PASO ${currentStep + 1} DE ${questions.length}`;
+    `PASO ${currentStep + 1} DE 3`;
 
-  optionsBox.replaceChildren();
+  optionsBox.innerHTML = "";
 
-  question.options.forEach((option) => {
+  question.options.forEach(option => {
 
     const label = document.createElement("label");
 
-    label.className =
-      "option" +
-      (answers[currentStep] === option ? " selected" : "");
+    label.className = "option";
+
+    if (answers[currentStep] === option) {
+      label.classList.add("selected");
+    }
 
     const radio = document.createElement("input");
 
     radio.type = "radio";
+
     radio.name = "answer";
+
     radio.value = option;
 
     radio.checked = answers[currentStep] === option;
+
+    const text = document.createElement("span");
+
+    text.textContent = option;
 
     radio.addEventListener("change", () => {
 
       answers[currentStep] = option;
 
-      optionsBox.querySelectorAll(".option").forEach(el => {
-        el.classList.remove("selected");
+      optionsBox.querySelectorAll(".option").forEach(item => {
+
+        item.classList.remove("selected");
+
       });
 
       label.classList.add("selected");
@@ -97,13 +200,11 @@ function renderStep() {
 
     });
 
-    const text = document.createElement("span");
+    label.appendChild(radio);
 
-    text.textContent = option;
+    label.appendChild(text);
 
-    label.append(radio, text);
-
-    optionsBox.append(label);
+    optionsBox.appendChild(label);
 
   });
 
@@ -112,17 +213,27 @@ function renderStep() {
 
   document.querySelectorAll(".progress-step").forEach((bar, index) => {
 
-    bar.classList.toggle("done", index < currentStep);
+    bar.classList.remove("done", "active");
 
-    bar.classList.toggle("active", index === currentStep);
+    if (index < currentStep) {
+
+      bar.classList.add("done");
+
+    } else if (index === currentStep) {
+
+      bar.classList.add("active");
+
+    }
 
   });
 
 
+  /* BOTONES */
+
   backButton.hidden = currentStep === 0;
 
   nextButton.textContent =
-    currentStep === questions.length - 1
+    currentStep === 2
       ? "VER MI RESULTADO →"
       : "SIGUIENTE →";
 
@@ -133,60 +244,11 @@ function renderStep() {
 }
 
 
-/* MOSTRAR VENTANAS */
+/* =====================================
+   SIGUIENTE PASO
+===================================== */
 
-function showModal(modal) {
-
-  modal.classList.add("visible");
-
-  modal.setAttribute("aria-hidden", "false");
-
-  document.body.style.overflow = "hidden";
-
-}
-
-
-function hideModal(modal) {
-
-  modal.classList.remove("visible");
-
-  modal.setAttribute("aria-hidden", "true");
-
-  if (
-    ![resultModal, registrationModal].some(item =>
-      item.classList.contains("visible")
-    )
-  ) {
-    document.body.style.overflow = "";
-  }
-
-}
-
-
-/* ANIMACIÓN DE CARGA */
-
-function advanceWithLoader(callback) {
-
-  loader.classList.add("visible");
-
-  loader.setAttribute("aria-hidden", "false");
-
-  window.setTimeout(() => {
-
-    loader.classList.remove("visible");
-
-    loader.setAttribute("aria-hidden", "true");
-
-    callback();
-
-  }, 850);
-
-}
-
-
-/* BOTÓN SIGUIENTE */
-
-quizForm.addEventListener("submit", (event) => {
+quizForm.addEventListener("submit", event => {
 
   event.preventDefault();
 
@@ -199,9 +261,9 @@ quizForm.addEventListener("submit", (event) => {
 
   }
 
-  if (currentStep < questions.length - 1) {
+  loading(() => {
 
-    advanceWithLoader(() => {
+    if (currentStep < 2) {
 
       currentStep++;
 
@@ -212,22 +274,20 @@ quizForm.addEventListener("submit", (event) => {
         block: "start"
       });
 
-    });
+    } else {
 
-  } else {
+      showResult();
 
-    advanceWithLoader(() => {
+    }
 
-      showModal(resultModal);
-
-    });
-
-  }
+  });
 
 });
 
 
-/* BOTÓN VOLVER */
+/* =====================================
+   VOLVER AL PASO ANTERIOR
+===================================== */
 
 backButton.addEventListener("click", () => {
 
@@ -237,98 +297,77 @@ backButton.addEventListener("click", () => {
 
     renderStep();
 
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
   }
 
 });
 
 
-/* CONTINUAR AL REGISTRO */
+/* =====================================
+   RESULTADO FINAL
+===================================== */
+
+function showResult() {
+
+  resultModal.classList.add("visible");
+
+  resultModal.setAttribute("aria-hidden", "false");
+
+  document.body.style.overflow = "hidden";
+
+}
+
+
+/* =====================================
+   BOTÓN FINAL: ABRIR TU ENLACE
+===================================== */
 
 document
-  .getElementById("startRegistration")
+  .getElementById("finalButton")
   .addEventListener("click", () => {
 
-    hideModal(resultModal);
+    const destination = ENLACE_FINAL.trim();
 
-    showModal(registrationModal);
+    if (
+      !destination ||
+      destination === "PEGA_AQUI_TU_ENLACE"
+    ) {
 
-  });
-
-
-/* CERRAR VENTANAS */
-
-document.querySelectorAll("[data-close]").forEach(button => {
-
-  button.addEventListener("click", () => {
-
-    hideModal(
-      document.getElementById(button.dataset.close)
-    );
-
-  });
-
-});
-
-
-/* CERRAR AL TOCAR FUERA */
-
-document.querySelectorAll(".modal-overlay").forEach(overlay => {
-
-  overlay.addEventListener("click", event => {
-
-    if (event.target === overlay) {
-
-      hideModal(overlay);
-
-    }
-
-  });
-
-});
-
-
-/* VALIDAR FORMULARIO */
-
-document
-  .getElementById("registrationForm")
-  .addEventListener("submit", (event) => {
-
-    event.preventDefault();
-
-    const form = event.currentTarget;
-
-    const error =
-      document.getElementById("registrationError");
-
-    if (!form.reportValidity()) {
-      return;
-    }
-
-    if (!document.getElementById("consent").checked) {
-
-      error.textContent =
-        "Debes confirmar que deseas continuar.";
+      alert("Primero debes colocar tu enlace en script.js.");
 
       return;
 
     }
 
-    error.textContent = "";
+    try {
 
-    document.getElementById("demoNote").textContent =
-      "Formulario validado correctamente. No se envió ni guardó información porque aún no está conectado a un servicio de recepción.";
+      const url = new URL(destination);
 
-    const submitButton =
-      form.querySelector("button[type='submit']");
+      if (!["https:", "http:"].includes(url.protocol)) {
 
-    submitButton.textContent =
-      "FORMULARIO VALIDADO ✓";
+        alert("Introduce un enlace válido.");
 
-    submitButton.disabled = true;
+        return;
+
+      }
+
+      window.location.assign(url.href);
+
+    } catch (error) {
+
+      alert("El enlace introducido no es válido.");
+
+    }
 
   });
 
 
-/* INICIAR PÁGINA */
+/* =====================================
+   INICIAR
+===================================== */
 
 renderStep();
