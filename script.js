@@ -334,7 +334,7 @@ document
 
     if (
       !destination ||
-      destination === "https://o.uvixs.com//click/SEHdPXo2"
+      destination === "PEGA_AQUI_TU_ENLACE"
     ) {
 
       alert("Primero debes colocar tu enlace en script.js.");
