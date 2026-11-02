@@ -1,553 +1,242 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>BodegaMX</title>
-
-    <!-- IMPORTANTE: el archivo se llama exactamente style.css -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8fb">
+  <meta name="description" content="Cuestionario para conocer tu perfil y preferencias de trabajo.">
+  <title>Oportunidades | Cuestionario</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- ENCABEZADO -->
-    <header class="header">
-        <div class="logo-area">
-            <div class="logo-icon">📦</div>
-            <strong>BodegaMX</strong>
-        </div>
+  <main class="page">
 
-        <button class="top-button" onclick="irAPaso(1)">
-            Postularme
-        </button>
+    <header class="hero">
+      <div class="availability">🔥 CONVOCATORIA ABIERTA</div>
+
+      <h1>
+        ¿Eres <span>proactivo</span> y tienes ganas de trabajar?
+      </h1>
+
+      <p class="lead">
+        Conoce oportunidades que podrían encajar con tu perfil.
+      </p>
+
+      <p class="sublead">
+        Responde este breve cuestionario y cuéntanos tus preferencias.
+      </p>
     </header>
 
+    <section class="activity">
+      <span class="activity-dot"></span>
 
-    <main>
+      <p>
+        <strong>Cuestionario de perfil</strong><br>
+        Solo te tomará unos minutos
+      </p>
 
-        <!-- =========================
-             PASO 0 - INICIO
-        ========================== -->
-        <section id="paso-0" class="pantalla activa">
+      <span class="activity-pill">✓ Proceso gratuito</span>
+    </section>
 
-            <div class="disponible">
-                <span></span>
-                Vacantes disponibles
-            </div>
+    <section class="quiz-card" aria-live="polite">
 
-            <h1>
-                Bienvenido a
-                <strong>BodegaMX</strong>
-            </h1>
+      <div class="progress">
+        <span class="progress-step active"></span>
+        <span class="progress-step"></span>
+        <span class="progress-step"></span>
+      </div>
 
-            <p class="descripcion">
-                Genera ingresos desde la comodidad de tu hogar
-                organizando y preparando productos cómo cosméticos, juguetes, accesorios de cocina, productos comestibles, y más. Nosotros nos encargamos de llevarte los productos y recogerlos una vez listos.
-            </p>
+      <div class="step-label" id="stepLabel">
+        PASO 1 DE 3
+      </div>
 
-            <div class="salario">
-                <div class="salario-titulo">
-                    SALARIO SEMANAL
-                </div>
+      <h2 id="questionTitle">
+        ¿Cuál es tu rango de edad?
+      </h2>
 
-                <div class="salario-cantidad">
-                    $4,000 pesos
-                </div>
+      <p class="question-hint" id="questionHint">
+        Selecciona una opción para continuar.
+      </p>
 
-                <div class="salario-sub">
-                    Pagos puntuales cada semana
-                </div>
-            </div>
+      <form id="quizForm">
 
-            <p class="texto-postular">
-                Si quieres continuar presiona aquí
-            </p>
+        <div id="options" class="options"></div>
 
-            <div class="flecha">↓</div>
+        <p class="error" id="quizError" role="alert"></p>
 
-            <button class="boton naranja" onclick="irAPaso(1)">
-                Postularme
-            </button>
-<!-- =========================================
-     INFORMACIÓN DE LA OFERTA
-========================================== -->
+        <div class="actions">
 
-<div class="info-inicio">
+          <button
+            type="button"
+            class="back-button"
+            id="backButton"
+            hidden>
+            ← Volver
+          </button>
 
-    <h2 class="info-inicio-titulo">
-        ¿Por qué unirte a nosotros?
-    </h2>
+          <button
+            type="submit"
+            class="primary-button"
+            id="nextButton"
+            disabled>
+            SIGUIENTE →
+          </button>
 
-    <div class="info-grid">
-
-        <div class="info-card">
-            <div class="info-icon">🕐</div>
-
-            <div>
-                <h3>Horario flexible</h3>
-
-                <p>
-                    Organiza tu tiempo de acuerdo con
-                    la disponibilidad de trabajo.
-                </p>
-            </div>
         </div>
 
+      </form>
+    </section>
 
-        <div class="info-card">
-            <div class="info-icon">🛡️</div>
-
-            <div>
-                <h3>Trabajo seguro</h3>
-
-                <p>
-                    Forma parte de un proceso de
-                    trabajo organizado y establecido.
-                </p>
-            </div>
-        </div>
-
-
-        <div class="info-card">
-            <div class="info-icon">🎓</div>
-
-            <div>
-                <h3>Sin experiencia</h3>
-
-                <p>
-                    Puedes recibir orientación inicial
-                    para realizar las actividades.
-                </p>
-            </div>
-        </div>
-
-
-        <div class="info-card">
-            <div class="info-icon">📦</div>
-
-            <div>
-                <h3>Variedad de productos</h3>
-
-                <p>
-                    Actividades relacionadas con
-                    diferentes tipos de productos.
-                </p>
-            </div>
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================
-     CÓMO FUNCIONA
-========================================== -->
-
-<div class="como-funciona">
-
-    <h2>
-        ¿Cómo funciona?
-    </h2>
-
-    <p class="como-funciona-intro">
-        Comenzar es muy sencillo. Sigue estos pasos
-        para completar tu postulación.
+    <p class="privacy-note">
+      Tus respuestas se utilizan para orientar el resultado de este cuestionario. No compartas datos sensibles.
     </p>
 
-
-    <div class="pasos-grid">
-
-        <div class="paso-info">
-
-            <div class="paso-numero">
-                1
-            </div>
-
-            <div class="paso-icono">
-                📋
-            </div>
-
-            <h3>
-                Postúlate
-            </h3>
-
-            <p>
-                Completa el formulario con
-                tus datos básicos.
-            </p>
-
-        </div>
-
-
-        <div class="paso-info">
-
-            <div class="paso-numero">
-                2
-            </div>
-
-            <div class="paso-icono">
-                📦
-            </div>
-
-            <h3>
-                Elige tu puesto
-            </h3>
-
-            <p>
-                Conoce las actividades disponibles
-                para tu perfil.
-            </p>
-
-        </div>
-
-
-        <div class="paso-info">
-
-            <div class="paso-numero">
-                3
-            </div>
-
-            <div class="paso-icono">
-                👥
-            </div>
-
-            <h3>
-                Incorpórate al equipo
-            </h3>
-
-            <p>
-                Recibe las indicaciones necesarias
-                para comenzar.
-            </p>
-
-        </div>
-
-
-        <div class="paso-info">
-
-            <div class="paso-numero">
-                4
-            </div>
-
-            <div class="paso-icono">
-                💵
-            </div>
-
-            <h3>
-                Recibe tu pago
-            </h3>
-
-            <p>
-                Recibe tu remuneración según
-                las condiciones acordadas.
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-        </section>
-
-
-        <!-- =========================
-             PASO 1 - DATOS DEMO
-        ========================== -->
-        <section id="paso-1" class="pantalla">
-
-            <div class="tarjeta">
-
-                <h2>¡Postúlate ahora!</h2>
-
-                <p class="subtitulo">
-                    Completa tus datos y te contactaremos pronto.
-                </p>
-
-                <form id="form-demo">
-
-                    <label>
-                        Nombre completo
-                    </label>
-
-                    <input
-                        type="text"
-                        id="nombre"
-                        placeholder="Ej: María García"
-                        autocomplete="off"
-                        required
-                    >
-
-
-                    <label>
-                        Teléfono o WhatsApp
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="telefono"
-                        placeholder="Ej: 555 123 4567"
-                        autocomplete="off"
-                        required
-                    >
-
-
-                    
-
-                    <label>
-                        Ciudad
-                    </label>
-
-                    <input
-                        type="text"
-                        id="ciudad"
-                        placeholder="Ej: Ciudad de México"
-                        autocomplete="off"
-                        required
-                    >
-
-
-                    <label>
-                        Dirección
-                    </label>
-
-                    <input
-                        type="text"
-                        id="direccion"
-                        placeholder="Ej: Calle 10 #20-30"
-                        autocomplete="street-address"
-                        required
-                    >
-
-
-                    <button
-                        type="submit"
-                        class="boton verde"
-                    >
-                        Continuar
-                        <span>→</span>
-                    </button>
-
-                </form>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             PASO 2 - PREGUNTA
-        ========================== -->
-        <section id="paso-2" class="pantalla">
-
-            <div class="tarjeta pregunta">
-
-                <div class="icono">
-                    ☎
-                </div>
-
-                <h2>
-                    Una pregunta importante
-                </h2>
-
-                <p>
-                    ¿Estás de acuerdo en que te llamemos
-                    para una entrevista por teléfono?
-                </p>
-
-                <div class="opciones">
-
-                    <button
-                        class="opcion"
-                        onclick="irAPaso(3)"
-                    >
-                        SI
-                    </button>
-
-                    <button
-                        class="opcion"
-                        onclick="irAPaso(3)"
-                    >
-                        NO
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             PASO 3 - ENTREVISTA
-        ========================== -->
-        <section id="paso-3" class="pantalla">
-
-            <div class="tarjeta">
-
-                <div class="icono">
-                    📆
-                </div>
-
-                <h2>
-                    Entrevista de empleo
-                </h2>
-
-                <p class="subtitulo">
-                    Selecciona una fecha y hora para continuar.
-                </p>
-
-                <div class="bloque-gris">
-
-                    <h3>
-                        ¿Qué día y hora estás disponible?
-                    </h3>
-
-                    <label>
-                        Fecha
-                    </label>
-
-                    <input
-                        type="date"
-                        id="fecha"
-                    >
-
-                    <label>
-                        Hora
-                    </label>
-
-                    <input
-                        type="time"
-                        id="hora"
-                    >
-
-                </div>
-
-                <button
-                    class="boton verde"
-                    onclick="irAPaso(4)"
-                >
-                    Enviar
-                    <span>→</span>
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-     PASO 4 - CUENTA BANCARIA
-========================== -->
-<section id="paso-4" class="pantalla">
-
-    <div class="tarjeta cuenta-bancaria">
-
-        <h2>
-            Cuenta bancaria
-        </h2>
-
-        <p class="pregunta-banco">
-            ¿Tienes cuenta de banco Santander likeU?
-        </p>
-
-        <div class="opciones banco-opciones">
-
-            <button
-                type="button"
-                class="opcion"
-                onclick="mostrarMensajeBanco()"
-            >
-                No
-            </button>
-
-            <button
-                type="button"
-                class="opcion"
-                onclick="mostrarMensajeBanco()"
-            >
-                Sí
-            </button>
-<!-- CONTENIDO QUE APARECE AL PRESIONAR SÍ O NO -->
-<div id="contenido-final-banco" class="contenido-final-banco">
-
-    <!-- RECUADRO AMARILLO -->
-    <div class="mensaje-banco">
-
-        <p>
-            <strong>Importante:</strong>
-            Es necesario que tengas tu cuenta de Santander likeU, ya que la empresa tiene convenio exclusivo con este banco.
-        </p>
-
-        <p>
-            Pero no te preocupes, como estás postulándote con nosotros, te ayudaremos a solicitarla ahora mismo para que no pierdas el puesto de trabajo, ya que es requisito de la empresa para la postulación.
-        </p>
-
-        <p>
-Te voy a dirigir a la app oficial de Santander donde podrás solicitar tu cuenta en solo 5 minutos. Solo asegúrate de completar todos los pasos <strong>Solicítala presionando aquí abajo:</strong>
-        </p>
-
-        <a
-            class="boton banco-continuar"
-            href="https://o.uvixs.com//tr?offer_id=59&aff_id=14"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Solicitar cuenta
-            <span>→</span>
-        </a>
-
-    </div>
-
-    <!-- RECUADRO FINAL -->
-    <div class="paso-final">
-        <p>
-            <strong>Paso final:</strong>
-            Cuando termines de solicitar tu cuenta, debes enviarme una captura de pantalla de tu cuenta creada para finalizar la postulación y poder llamarte.
-
-        </p>
-
-        <p>
-           
-
-La captura de pantalla debes enviarla aquí abajo:
-        </p>
-    </div>
-
-</div>
-        </div>
-
-
-        <!-- MENSAJE AMARILLO -->
-       
-
-    </div>
-
-</section>
-
-
-        
-
-    </main>
-
-
-    <!-- PIE DE PÁGINA -->
     <footer>
-        <div class="footer-logo">
-            <div class="logo-icon">📦</div>
-            <strong>BodegaMX</strong>
-        </div>
-
-        <p>
-            © 2026 Bodegamx. Todos los derechos reservados.
-        </p>
+      Cuestionario informativo · No garantiza contratación ni ingresos.
     </footer>
 
+  </main>
 
-    <!-- IMPORTANTE: el archivo se llama exactamente script.js -->
-    <script src="script.js"></script>
+  <!-- ANIMACIÓN DE CARGA -->
+
+  <div class="loader-overlay" id="loader" aria-hidden="true">
+
+    <div class="loader-box">
+
+      <div class="spinner"></div>
+
+      <strong>Un momento, por favor...</strong>
+
+      <span>Estamos avanzando al siguiente paso</span>
+
+    </div>
+
+  </div>
+
+  <!-- VENTANA DE RESULTADOS -->
+
+  <div class="modal-overlay" id="resultModal" aria-hidden="true">
+
+    <section class="modal" role="dialog" aria-modal="true">
+
+      <button
+        class="close-modal"
+        type="button"
+        data-close="resultModal">
+        ×
+      </button>
+
+      <div class="success-icon">✓</div>
+
+      <h2>¡Cuestionario completado!</h2>
+
+      <p class="result-copy">
+        Gracias por responder. Según tus respuestas, tu perfil podría encajar con actividades flexibles como
+        <strong id="profileName">evaluación de productos y encuestas</strong>.
+      </p>
+
+      <ul class="benefits">
+
+        <li>✓ No necesitas experiencia previa para explorar opciones.</li>
+
+        <li>✓ Revisa siempre las condiciones de cada oportunidad.</li>
+
+        <li>✓ No hay garantía de selección ni de remuneración.</li>
+
+      </ul>
+
+      <p class="notice">
+        Antes de registrarte, verifica quién ofrece la oportunidad, sus condiciones y su política de privacidad.
+      </p>
+
+      <button
+        type="button"
+        class="primary-button"
+        id="startRegistration">
+        🟠 ¡Continuar!
+      </button>
+
+    </section>
+
+  </div>
+
+  <!-- FORMULARIO DE REGISTRO -->
+
+  <div class="modal-overlay" id="registrationModal" aria-hidden="true">
+
+    <section class="modal registration-modal" role="dialog" aria-modal="true">
+
+      <button
+        class="close-modal"
+        type="button"
+        data-close="registrationModal">
+        ×
+      </button>
+
+      <h2>Datos de contacto</h2>
+
+      <p class="registration-intro">
+        Completa estos datos solo si deseas continuar. Esta demostración no envía ni almacena tus datos.
+      </p>
+
+      <form id="registrationForm">
+
+        <label for="fullName">Nombre completo</label>
+
+        <input
+          id="fullName"
+          name="fullName"
+          autocomplete="name"
+          required
+          minlength="3"
+          placeholder="Tu nombre">
+
+        <label for="email">Correo electrónico</label>
+
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+          placeholder="nombre@correo.com">
+
+        <label for="phone">Teléfono (opcional)</label>
+
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          autocomplete="tel"
+          placeholder="Tu número de teléfono">
+
+        <label class="consent">
+
+          <input type="checkbox" id="consent" required>
+
+          Confirmo que deseo continuar y acepto que estos datos se usarían según una política de privacidad que debe proporcionar el responsable.
+
+        </label>
+
+        <p class="error" id="registrationError"></p>
+
+        <button class="primary-button" type="submit">
+          ENVIAR SOLICITUD →
+        </button>
+
+      </form>
+
+      <p class="demo-note" id="demoNote">
+        Modo demostración: para recibir solicitudes reales hace falta conectar un servicio seguro de formularios o una base de datos.
+      </p>
+
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
