@@ -4,237 +4,223 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f7f8fb">
-  <meta name="description" content="Cuestionario para conocer tu perfil y preferencias de trabajo.">
-  <title>Oportunidades | Cuestionario</title>
+  <meta name="theme-color" content="#fff7ed">
+
+  <title>Convocatoria Abierta</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <main class="page">
 
-    <header class="hero">
-      <div class="availability">🔥 CONVOCATORIA ABIERTA</div>
+    <!-- PANTALLA DE BIENVENIDA -->
+    <section id="welcomeScreen" class="welcome-screen">
 
-      <h1>
-        ¿Eres <span>proactivo</span> y tienes ganas de trabajar?
-      </h1>
+      <div class="welcome-card">
 
-      <p class="lead">
-        Conoce oportunidades que podrían encajar con tu perfil.
-      </p>
+        <div class="welcome-header">
+          Convocatoria Abierta<br>
+          Participación en Estudios de Mercado
+        </div>
 
-      <p class="sublead">
-        Responde este breve cuestionario y cuéntanos tus preferencias.
-      </p>
-    </header>
+        <div class="welcome-content">
 
-    <section class="activity">
-      <span class="activity-dot"></span>
+          <p class="welcome-description">
+            🔥 Buscamos 25 personas interesadas en participar
+            en estudios de mercado remunerados. La participación
+            es remota y puede realizarse desde cualquier lugar
+            con acceso a internet.
+          </p>
 
-      <p>
-        <strong>Cuestionario de perfil</strong><br>
-        Solo te tomará unos minutos
-      </p>
+          <div class="welcome-benefits">
+            <p>• Flexible: 2 - 4 horas/día.</p>
+            <p>• Compensación semanal.</p>
+            <p>• Sin ventas ni llamadas.</p>
+            <p>• Marcas líderes.</p>
+          </div>
 
-      <span class="activity-pill">✓ Proceso gratuito</span>
-    </section>
+          <p class="welcome-text">
+            Haz clic en "Continuar", responde unas preguntas
+            y en menos de 5 minutos estás dentro! 😉
+          </p>
 
-    <section class="quiz-card" aria-live="polite">
-
-      <div class="progress">
-        <span class="progress-step active"></span>
-        <span class="progress-step"></span>
-        <span class="progress-step"></span>
-      </div>
-
-      <div class="step-label" id="stepLabel">
-        PASO 1 DE 3
-      </div>
-
-      <h2 id="questionTitle">
-        ¿Cuál es tu rango de edad?
-      </h2>
-
-      <p class="question-hint" id="questionHint">
-        Selecciona una opción para continuar.
-      </p>
-
-      <form id="quizForm">
-
-        <div id="options" class="options"></div>
-
-        <p class="error" id="quizError" role="alert"></p>
-
-        <div class="actions">
-
-          <button
-            type="button"
-            class="back-button"
-            id="backButton"
-            hidden>
-            ← Volver
-          </button>
-
-          <button
-            type="submit"
-            class="primary-button"
-            id="nextButton"
-            disabled>
-            SIGUIENTE →
+          <button id="continueButton" class="primary-button">
+            📲 CONTINUAR
           </button>
 
         </div>
+      </div>
 
-      </form>
     </section>
 
-    <p class="privacy-note">
-      Tus respuestas se utilizan para orientar el resultado de este cuestionario. No compartas datos sensibles.
-    </p>
 
-    <footer>
-      Cuestionario informativo · No garantiza contratación ni ingresos.
-    </footer>
+    <!-- CUESTIONARIO -->
+    <section id="quizScreen" class="quiz-screen" hidden>
+
+      <header class="hero">
+
+        <div class="availability">
+          🔥 25 PLAZAS DISPONIBLES
+        </div>
+
+        <h1>
+          ¿Eres <span>proactivo</span> y con ganas de trabajar?
+        </h1>
+
+        <p class="lead">
+          Seleccionamos 25 personas para tareas sencillas
+        </p>
+
+        <p class="sublead">
+          Responde este breve cuestionario y descubre qué perfil
+          encaja mejor contigo.
+        </p>
+
+      </header>
+
+
+      <div class="activity">
+
+        <div class="activity-dot"></div>
+
+        <p>
+          <strong>Javier</strong> fue seleccionada<br>
+          hace <strong>5 min</strong>
+        </p>
+
+        <div class="activity-pill">
+          🔴 12 seleccionados hoy
+        </div>
+
+      </div>
+
+
+      <section class="quiz-card">
+
+        <div class="progress">
+          <div class="progress-step active"></div>
+          <div class="progress-step"></div>
+          <div class="progress-step"></div>
+        </div>
+
+        <div class="step-label" id="stepLabel">
+          PASO 1 DE 3
+        </div>
+
+        <h2 id="questionTitle">
+          ¿Cuál es tu rango de edad?
+        </h2>
+
+        <p class="question-hint" id="questionHint"></p>
+
+        <form id="quizForm">
+
+          <div class="options" id="options"></div>
+
+          <p class="error" id="quizError" aria-live="polite"></p>
+
+          <div class="actions">
+
+            <button
+              type="button"
+              id="backButton"
+              class="back-button"
+              hidden>
+              ← VOLVER
+            </button>
+
+            <button
+              type="submit"
+              id="nextButton"
+              class="primary-button"
+              disabled>
+              SIGUIENTE →
+            </button>
+
+          </div>
+
+        </form>
+
+      </section>
+
+      <p class="privacy-note">
+        * Tus respuestas nos ayudan a encontrar el mejor perfil para ti.
+      </p>
+
+    </section>
 
   </main>
 
-  <!-- ANIMACIÓN DE CARGA -->
 
-  <div class="loader-overlay" id="loader" aria-hidden="true">
+  <!-- ANIMACIÓN DE CARGA -->
+  <div
+    id="loader"
+    class="loader-overlay"
+    aria-hidden="true">
 
     <div class="loader-box">
-
       <div class="spinner"></div>
-
       <strong>Un momento, por favor...</strong>
-
-      <span>Estamos avanzando al siguiente paso</span>
-
+      <span>Estamos avanzando al siguiente paso.</span>
     </div>
 
   </div>
 
-  <!-- VENTANA DE RESULTADOS -->
 
-  <div class="modal-overlay" id="resultModal" aria-hidden="true">
+  <!-- RESULTADO FINAL -->
+  <div
+    id="resultModal"
+    class="modal-overlay"
+    aria-hidden="true">
 
-    <section class="modal" role="dialog" aria-modal="true">
-
-      <button
-        class="close-modal"
-        type="button"
-        data-close="resultModal">
-        ×
-      </button>
+    <section
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="resultTitle">
 
       <div class="success-icon">✓</div>
 
-      <h2>¡Cuestionario completado!</h2>
+      <h2 id="resultTitle">¡Felicidades!</h2>
 
       <p class="result-copy">
-        Gracias por responder. Según tus respuestas, tu perfil podría encajar con actividades flexibles como
-        <strong id="profileName">evaluación de productos y encuestas</strong>.
+        Aplicas para <strong>Evaluador de Productos.</strong>
       </p>
 
-      <ul class="benefits">
-
-        <li>✓ No necesitas experiencia previa para explorar opciones.</li>
-
-        <li>✓ Revisa siempre las condiciones de cada oportunidad.</li>
-
-        <li>✓ No hay garantía de selección ni de remuneración.</li>
-
-      </ul>
-
-      <p class="notice">
-        Antes de registrarte, verifica quién ofrece la oportunidad, sus condiciones y su política de privacidad.
+      <p class="result-copy">
+        Grandes marcas te pagarán hasta
+        <strong class="green-text">
+          9€ por encuesta completada.
+        </strong>
       </p>
+
+      <div class="result-benefit">
+        ✅ Sin experiencia
+      </div>
+
+      <div class="result-benefit">
+        ⏱️ A tu ritmo
+      </div>
+
+      <div class="notice">
+        📌 <strong>Regístrate solo si estás interesado</strong>
+        en generar ingresos extras desde casa.
+        Las plazas son limitadas.
+      </div>
 
       <button
         type="button"
-        class="primary-button"
-        id="startRegistration">
-        🟠 ¡Continuar!
+        id="finalButton"
+        class="primary-button">
+        🟠 ¡Comenzar ahora!
       </button>
 
     </section>
 
   </div>
 
-  <!-- FORMULARIO DE REGISTRO -->
-
-  <div class="modal-overlay" id="registrationModal" aria-hidden="true">
-
-    <section class="modal registration-modal" role="dialog" aria-modal="true">
-
-      <button
-        class="close-modal"
-        type="button"
-        data-close="registrationModal">
-        ×
-      </button>
-
-      <h2>Datos de contacto</h2>
-
-      <p class="registration-intro">
-        Completa estos datos solo si deseas continuar. Esta demostración no envía ni almacena tus datos.
-      </p>
-
-      <form id="registrationForm">
-
-        <label for="fullName">Nombre completo</label>
-
-        <input
-          id="fullName"
-          name="fullName"
-          autocomplete="name"
-          required
-          minlength="3"
-          placeholder="Tu nombre">
-
-        <label for="email">Correo electrónico</label>
-
-        <input
-          id="email"
-          name="email"
-          type="email"
-          autocomplete="email"
-          required
-          placeholder="nombre@correo.com">
-
-        <label for="phone">Teléfono (opcional)</label>
-
-        <input
-          id="phone"
-          name="phone"
-          type="tel"
-          autocomplete="tel"
-          placeholder="Tu número de teléfono">
-
-        <label class="consent">
-
-          <input type="checkbox" id="consent" required>
-
-          Confirmo que deseo continuar y acepto que estos datos se usarían según una política de privacidad que debe proporcionar el responsable.
-
-        </label>
-
-        <p class="error" id="registrationError"></p>
-
-        <button class="primary-button" type="submit">
-          ENVIAR SOLICITUD →
-        </button>
-
-      </form>
-
-      <p class="demo-note" id="demoNote">
-        Modo demostración: para recibir solicitudes reales hace falta conectar un servicio seguro de formularios o una base de datos.
-      </p>
-
-    </section>
-
-  </div>
 
   <script src="script.js"></script>
 
