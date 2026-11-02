@@ -32,79 +32,80 @@ button {
 }
 
 .page {
-  width: min(100% - 28px, 660px);
+  width: min(100% - 32px, 640px);
   margin: auto;
-  padding: 28px 0 30px;
+  padding: 22px 0 28px;
 }
 
 /* BIENVENIDA */
 
 .welcome-screen {
-  animation: appear .45s ease;
+  animation: appear .4s ease;
 }
 
 .welcome-card {
-  background: #fff;
-  border-radius: 40px 40px 0 0;
+  background: white;
+  border-radius: 34px 34px 0 0;
   overflow: hidden;
-  box-shadow: 0 12px 40px #ed721b18;
   border: 1px solid #f3e5d7;
+  box-shadow: 0 10px 30px #ed721b12;
 }
 
 .welcome-header {
-  padding: 48px 24px 40px;
+  padding: 35px 20px 32px;
   text-align: center;
   color: white;
   background: linear-gradient(110deg, #f47716, #ec5707);
   font-family: Georgia, serif;
-  font-size: clamp(27px, 6vw, 39px);
-  line-height: 1.4;
+  font-size: 27px;
+  line-height: 1.35;
 }
 
 .welcome-content {
-  padding: 35px 34px 45px;
+  padding: 28px 24px 36px;
 }
 
 .welcome-description {
-  margin: 0 0 38px;
+  margin: 0 0 30px;
   color: #353535;
-  font-size: clamp(19px, 4.5vw, 27px);
-  line-height: 1.8;
+  font-size: 19px;
+  line-height: 1.75;
   font-weight: 500;
 }
 
 .welcome-benefits {
-  padding: 23px 25px;
+  padding: 19px 20px;
   border: 1px solid #f6eadc;
-  border-radius: 28px;
+  border-radius: 23px;
   background: #fff7ee;
   color: #514b46;
-  font-size: clamp(18px, 4.3vw, 25px);
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 .welcome-benefits p {
-  margin: 8px 0;
+  margin: 7px 0;
 }
 
 .welcome-text {
-  margin: 35px 0 55px;
+  margin: 28px 0 42px;
   color: #646464;
-  font-size: clamp(18px, 4.2vw, 25px);
-  line-height: 1.75;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 /* BOTONES */
 
 .primary-button {
   width: 100%;
-  min-height: 82px;
-  padding: 15px 20px;
+  min-height: 65px;
+  padding: 12px 16px;
   border: none;
   border-radius: 100px;
   color: white;
   background: linear-gradient(105deg, #f47716, #ed5707);
-  box-shadow: 0 13px 28px #ed650a38;
-  font-size: clamp(20px, 5vw, 27px);
+  box-shadow: 0 10px 23px #ed650a30;
+  font-size: 21px;
   font-weight: 1000;
   transition: transform .2s, filter .2s;
 }
@@ -120,31 +121,31 @@ button {
   box-shadow: none;
 }
 
-/* ENCABEZADO DEL CUESTIONARIO */
+/* ENCABEZADO */
 
 .hero {
   text-align: center;
-  padding: 10px 4px 0;
+  padding: 8px 3px 0;
 }
 
 .availability {
   display: inline-block;
-  padding: 10px 22px;
+  padding: 8px 18px;
   border: 1px solid #f0d96b;
   border-radius: 100px;
   background: #fff8d7;
   color: #a85a12;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 1000;
   letter-spacing: 1px;
 }
 
 .hero h1 {
-  margin: 23px auto 12px;
-  font-size: clamp(32px, 7vw, 46px);
+  margin: 20px auto 10px;
+  font-size: 35px;
   line-height: 1.08;
   font-weight: 1000;
-  letter-spacing: -1.3px;
+  letter-spacing: -1px;
 }
 
 .hero h1 span {
@@ -153,7 +154,7 @@ button {
 
 .lead {
   margin: 0;
-  font-size: clamp(18px, 4.5vw, 24px);
+  font-size: 19px;
   font-weight: 900;
   line-height: 1.35;
 }
@@ -161,7 +162,7 @@ button {
 .sublead {
   margin: 5px auto 0;
   color: #536071;
-  font-size: clamp(16px, 4vw, 21px);
+  font-size: 17px;
   font-weight: 800;
   line-height: 1.35;
 }
@@ -171,20 +172,20 @@ button {
 .activity {
   display: flex;
   align-items: center;
-  gap: 13px;
-  margin: 38px 0 40px;
-  padding: 19px 20px;
-  min-height: 105px;
+  gap: 10px;
+  margin: 30px 0 30px;
+  padding: 15px 17px;
+  min-height: 86px;
   border: 1px solid var(--line);
-  border-radius: 28px;
+  border-radius: 25px;
   background: white;
   box-shadow: 0 8px 24px #19263b08;
 }
 
 .activity-dot {
-  width: 14px;
-  height: 14px;
-  flex: 0 0 14px;
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
   border-radius: 50%;
   background: #62d29a;
 }
@@ -192,8 +193,8 @@ button {
 .activity p {
   flex: 1;
   margin: 0;
-  font-size: 17px;
-  line-height: 1.35;
+  font-size: 15px;
+  line-height: 1.3;
   font-weight: 800;
 }
 
@@ -202,12 +203,12 @@ button {
 }
 
 .activity-pill {
-  padding: 9px 12px;
+  padding: 7px 10px;
   border: 1px solid #bcebd2;
   border-radius: 100px;
   background: #e9faf1;
   color: #219b58;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 1000;
   white-space: nowrap;
 }
@@ -215,9 +216,9 @@ button {
 /* CUESTIONARIO */
 
 .quiz-card {
-  padding: 34px;
+  padding: 27px 24px;
   border: 1px solid #dce3eb;
-  border-radius: 48px;
+  border-radius: 40px;
   background: white;
   box-shadow: 0 14px 38px #1b2c4510;
   animation: appear .35s ease;
@@ -226,12 +227,12 @@ button {
 .progress {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 32px;
+  gap: 8px;
+  margin-bottom: 28px;
 }
 
 .progress-step {
-  height: 10px;
+  height: 9px;
   border-radius: 100px;
   background: #e1e7ee;
 }
@@ -246,41 +247,41 @@ button {
 
 .step-label {
   color: #9aa6b6;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 1px;
   font-weight: 1000;
 }
 
 .quiz-card h2 {
-  margin: 12px 0 18px;
-  font-size: clamp(23px, 5.5vw, 31px);
+  margin: 12px 0 17px;
+  font-size: 25px;
   line-height: 1.2;
   font-weight: 1000;
 }
 
 .question-hint {
-  margin: -8px 0 18px;
+  margin: -7px 0 16px;
   color: #8490a0;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
 }
 
 .options {
   display: grid;
-  gap: 15px;
+  gap: 12px;
 }
 
 .option {
   display: flex;
   align-items: center;
-  gap: 17px;
-  min-height: 80px;
-  padding: 15px 20px;
+  gap: 15px;
+  min-height: 67px;
+  padding: 12px 17px;
   border: 2px solid var(--line);
-  border-radius: 25px;
+  border-radius: 21px;
   background: #f8fafc;
   cursor: pointer;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 900;
   transition: .2s ease;
 }
@@ -292,11 +293,11 @@ button {
 
 .option input {
   appearance: none;
-  width: 29px;
-  height: 29px;
-  flex: 0 0 29px;
+  width: 25px;
+  height: 25px;
+  flex: 0 0 25px;
   margin: 0;
-  border: 3px solid #cbd4df;
+  border: 2.5px solid #cbd4df;
   border-radius: 50%;
   background: white;
   display: grid;
@@ -305,8 +306,8 @@ button {
 
 .option input::before {
   content: "";
-  width: 13px;
-  height: 13px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   background: var(--orange);
   transform: scale(0);
@@ -322,17 +323,18 @@ button {
 
 .actions {
   display: flex;
-  gap: 12px;
-  margin-top: 30px;
+  gap: 10px;
+  margin-top: 25px;
 }
 
 .back-button {
-  min-width: 105px;
-  padding: 12px;
+  min-width: 95px;
+  padding: 10px;
   border: 1px solid var(--line);
   border-radius: 100px;
   background: white;
   color: #566174;
+  font-size: 14px;
   font-weight: 900;
 }
 
@@ -341,19 +343,19 @@ button {
 }
 
 .error {
-  min-height: 18px;
-  margin: 8px 0 0;
+  min-height: 16px;
+  margin: 7px 0 0;
   color: #c62828;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
 }
 
 .privacy-note {
   text-align: center;
   color: #98a3b2;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 800;
-  margin: 30px 8px 12px;
+  margin: 25px 8px 12px;
 }
 
 /* CARGA */
@@ -365,7 +367,7 @@ button {
   z-index: 50;
   display: grid;
   place-items: center;
-  padding: 20px;
+  padding: 18px;
   background: #111827bd;
   backdrop-filter: blur(7px);
   opacity: 0;
@@ -382,31 +384,32 @@ button {
 .loader-box {
   display: grid;
   justify-items: center;
-  gap: 13px;
+  gap: 12px;
   color: white;
   text-align: center;
+  font-size: 15px;
 }
 
 .loader-box span {
   color: #e0e6ef;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .spinner {
-  width: 55px;
-  height: 55px;
-  border: 5px solid #ffffff55;
+  width: 45px;
+  height: 45px;
+  border: 4px solid #ffffff55;
   border-top-color: #ff8a2a;
   border-radius: 50%;
   animation: spin .75s linear infinite;
 }
 
-/* VENTANA FINAL */
+/* RESULTADO FINAL */
 
 .modal {
-  width: min(100%, 650px);
-  padding: 32px 26px 30px;
-  border-radius: 43px;
+  width: min(100%, 600px);
+  padding: 29px 23px 25px;
+  border-radius: 35px;
   background: white;
   text-align: center;
   box-shadow: 0 24px 80px #0003;
@@ -414,8 +417,8 @@ button {
 }
 
 .modal h2 {
-  margin: 0 0 17px;
-  font-size: clamp(30px, 7vw, 40px);
+  margin: 0 0 16px;
+  font-size: 34px;
   font-weight: 1000;
 }
 
@@ -424,9 +427,9 @@ button {
 }
 
 .result-copy {
-  margin: 15px 0;
+  margin: 13px 0;
   color: #384456;
-  font-size: clamp(18px, 4.5vw, 24px);
+  font-size: 18px;
   line-height: 1.5;
   font-weight: 800;
 }
@@ -440,25 +443,25 @@ button {
 }
 
 .result-benefit {
-  margin: 13px 0;
-  padding: 14px 16px;
+  margin: 11px 0;
+  padding: 12px 14px;
   border: 1px solid var(--line);
-  border-radius: 20px;
+  border-radius: 17px;
   background: #f8fafc;
   text-align: left;
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 900;
 }
 
 .notice {
-  margin-top: 23px;
-  padding: 15px;
-  border-left: 6px solid var(--orange);
-  border-radius: 20px;
+  margin-top: 20px;
+  padding: 13px;
+  border-left: 5px solid var(--orange);
+  border-radius: 17px;
   background: #fff6ed;
   color: #566071;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.45;
   text-align: left;
 }
 
@@ -467,8 +470,9 @@ button {
 }
 
 .modal .primary-button {
-  min-height: 85px;
-  margin-top: 25px;
+  min-height: 70px;
+  margin-top: 23px;
+  font-size: 21px;
 }
 
 /* ANIMACIONES */
@@ -482,7 +486,7 @@ button {
 @keyframes appear {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -493,7 +497,7 @@ button {
 @keyframes modalIn {
   from {
     opacity: 0;
-    transform: translateY(18px) scale(.98);
+    transform: translateY(15px) scale(.98);
   }
   to {
     opacity: 1;
@@ -501,77 +505,720 @@ button {
   }
 }
 
-/* CELULARES */
+/* AJUSTES PARA CELULARES */
 
 @media (max-width: 520px) {
 
   .page {
     width: calc(100% - 28px);
-    padding-top: 20px;
-  }
-
-  .welcome-card {
-    border-radius: 38px 38px 0 0;
+    padding-top: 17px;
   }
 
   .welcome-header {
-    padding: 48px 20px 38px;
+    padding: 34px 17px 29px;
+    font-size: 25px;
   }
 
   .welcome-content {
-    padding: 32px 34px 45px;
+    padding: 25px 21px 34px;
   }
 
   .welcome-description {
-    margin-bottom: 36px;
+    font-size: 18px;
   }
 
   .welcome-benefits {
-    padding: 22px 24px;
+    font-size: 17px;
   }
 
   .welcome-text {
-    margin: 35px 0 55px;
-  }
-
-  .activity {
-    gap: 9px;
-    padding: 15px;
-    margin: 28px 0 26px;
-  }
-
-  .activity p {
-    font-size: 15px;
-  }
-
-  .activity-pill {
-    padding: 8px 9px;
-    font-size: 11px;
-  }
-
-  .quiz-card {
-    padding: 27px 20px;
-    border-radius: 38px;
-  }
-
-  .option {
-    min-height: 75px;
-    padding: 13px 16px;
-    border-radius: 22px;
-    font-size: 19px;
+    font-size: 17px;
+    margin: 26px 0 37px;
   }
 
   .primary-button {
-    min-height: 75px;
+    min-height: 62px;
+    font-size: 19px;
   }
 
-  .modal {
-    padding: 32px 21px 25px;
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .lead {
+    font-size: 17px;
+  }
+
+  .sublead {
+    font-size: 16px;
+  }
+
+  .activity {
+    padding: 13px;
+    gap: 8px;
+    margin: 25px 0;
+  }
+
+  .activity p {
+    font-size: 14px;
+  }
+
+  .activity-pill {
+    font-size: 10px;
+    padding: 7px 8px;
+  }
+
+  .quiz-card {
+    padding: 24px 19px;
     border-radius: 35px;
   }
 
+  .quiz-card h2 {
+    font-size: 23px;
+  }
+
+  .option {
+    min-height: 65px;
+    font-size: 17px;
+    padding: 11px 14px;
+  }
+
+  .modal {
+    padding: 28px 18px 23px;
+    border-radius: 32px;
+  }
+
+  .modal h2 {
+    font-size: 32px;
+  }
+
+  .result-copy {
+    font-size: 17px;
+  }
+
+  .result-benefit {
+    font-size: 16px;
+  }
+
+  .notice {
+    font-size: 14px;
+  }
+
   .modal .primary-button {
-    min-height: 75px;
+    min-height: 65px;
+    font-size: 19px;
+  }
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900;1000&display=swap');
+
+:root {
+  --orange: #f47719;
+  --orange-dark: #ed5b08;
+  --ink: #151d30;
+  --muted: #8995a7;
+  --line: #e0e6ed;
+  --green: #25a85e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f4f6fa;
+  color: var(--ink);
+  font-family: "Nunito Sans", Arial, sans-serif;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.page {
+  width: min(100% - 32px, 640px);
+  margin: auto;
+  padding: 22px 0 28px;
+}
+
+/* BIENVENIDA */
+
+.welcome-screen {
+  animation: appear .4s ease;
+}
+
+.welcome-card {
+  background: white;
+  border-radius: 34px 34px 0 0;
+  overflow: hidden;
+  border: 1px solid #f3e5d7;
+  box-shadow: 0 10px 30px #ed721b12;
+}
+
+.welcome-header {
+  padding: 35px 20px 32px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(110deg, #f47716, #ec5707);
+  font-family: Georgia, serif;
+  font-size: 27px;
+  line-height: 1.35;
+}
+
+.welcome-content {
+  padding: 28px 24px 36px;
+}
+
+.welcome-description {
+  margin: 0 0 30px;
+  color: #353535;
+  font-size: 19px;
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+.welcome-benefits {
+  padding: 19px 20px;
+  border: 1px solid #f6eadc;
+  border-radius: 23px;
+  background: #fff7ee;
+  color: #514b46;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.welcome-benefits p {
+  margin: 7px 0;
+}
+
+.welcome-text {
+  margin: 28px 0 42px;
+  color: #646464;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* BOTONES */
+
+.primary-button {
+  width: 100%;
+  min-height: 65px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  background: linear-gradient(105deg, #f47716, #ed5707);
+  box-shadow: 0 10px 23px #ed650a30;
+  font-size: 21px;
+  font-weight: 1000;
+  transition: transform .2s, filter .2s;
+}
+
+.primary-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.primary-button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ENCABEZADO */
+
+.hero {
+  text-align: center;
+  padding: 8px 3px 0;
+}
+
+.availability {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid #f0d96b;
+  border-radius: 100px;
+  background: #fff8d7;
+  color: #a85a12;
+  font-size: 13px;
+  font-weight: 1000;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  margin: 20px auto 10px;
+  font-size: 35px;
+  line-height: 1.08;
+  font-weight: 1000;
+  letter-spacing: -1px;
+}
+
+.hero h1 span {
+  color: var(--orange);
+}
+
+.lead {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.sublead {
+  margin: 5px auto 0;
+  color: #536071;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+/* ACTIVIDAD */
+
+.activity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 0 30px;
+  padding: 15px 17px;
+  min-height: 86px;
+  border: 1px solid var(--line);
+  border-radius: 25px;
+  background: white;
+  box-shadow: 0 8px 24px #19263b08;
+}
+
+.activity-dot {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
+  border-radius: 50%;
+  background: #62d29a;
+}
+
+.activity p {
+  flex: 1;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 800;
+}
+
+.activity p strong {
+  color: var(--orange);
+}
+
+.activity-pill {
+  padding: 7px 10px;
+  border: 1px solid #bcebd2;
+  border-radius: 100px;
+  background: #e9faf1;
+  color: #219b58;
+  font-size: 12px;
+  font-weight: 1000;
+  white-space: nowrap;
+}
+
+/* CUESTIONARIO */
+
+.quiz-card {
+  padding: 27px 24px;
+  border: 1px solid #dce3eb;
+  border-radius: 40px;
+  background: white;
+  box-shadow: 0 14px 38px #1b2c4510;
+  animation: appear .35s ease;
+}
+
+.progress {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.progress-step {
+  height: 9px;
+  border-radius: 100px;
+  background: #e1e7ee;
+}
+
+.progress-step.done {
+  background: #27bd69;
+}
+
+.progress-step.active {
+  background: var(--orange);
+}
+
+.step-label {
+  color: #9aa6b6;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 1000;
+}
+
+.quiz-card h2 {
+  margin: 12px 0 17px;
+  font-size: 25px;
+  line-height: 1.2;
+  font-weight: 1000;
+}
+
+.question-hint {
+  margin: -7px 0 16px;
+  color: #8490a0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.options {
+  display: grid;
+  gap: 12px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 67px;
+  padding: 12px 17px;
+  border: 2px solid var(--line);
+  border-radius: 21px;
+  background: #f8fafc;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 900;
+  transition: .2s ease;
+}
+
+.option.selected {
+  border-color: var(--orange);
+  background: #fff7ef;
+}
+
+.option input {
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  flex: 0 0 25px;
+  margin: 0;
+  border: 2.5px solid #cbd4df;
+  border-radius: 50%;
+  background: white;
+  display: grid;
+  place-content: center;
+}
+
+.option input::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--orange);
+  transform: scale(0);
+}
+
+.option input:checked {
+  border-color: var(--orange);
+}
+
+.option input:checked::before {
+  transform: scale(1);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.back-button {
+  min-width: 95px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  background: white;
+  color: #566174;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.actions .primary-button {
+  flex: 1;
+}
+
+.error {
+  min-height: 16px;
+  margin: 7px 0 0;
+  color: #c62828;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.privacy-note {
+  text-align: center;
+  color: #98a3b2;
+  font-size: 13px;
+  font-weight: 800;
+  margin: 25px 8px 12px;
+}
+
+/* CARGA */
+
+.loader-overlay,
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: #111827bd;
+  backdrop-filter: blur(7px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s, visibility .25s;
+}
+
+.loader-overlay.visible,
+.modal-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loader-box {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+}
+
+.loader-box span {
+  color: #e0e6ef;
+  font-size: 13px;
+}
+
+.spinner {
+  width: 45px;
+  height: 45px;
+  border: 4px solid #ffffff55;
+  border-top-color: #ff8a2a;
+  border-radius: 50%;
+  animation: spin .75s linear infinite;
+}
+
+/* RESULTADO FINAL */
+
+.modal {
+  width: min(100%, 600px);
+  padding: 29px 23px 25px;
+  border-radius: 35px;
+  background: white;
+  text-align: center;
+  box-shadow: 0 24px 80px #0003;
+  animation: modalIn .3s ease;
+}
+
+.modal h2 {
+  margin: 0 0 16px;
+  font-size: 34px;
+  font-weight: 1000;
+}
+
+.success-icon {
+  display: none;
+}
+
+.result-copy {
+  margin: 13px 0;
+  color: #384456;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 800;
+}
+
+.result-copy strong {
+  color: var(--ink);
+}
+
+.green-text {
+  color: var(--green) !important;
+}
+
+.result-benefit {
+  margin: 11px 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  background: #f8fafc;
+  text-align: left;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.notice {
+  margin-top: 20px;
+  padding: 13px;
+  border-left: 5px solid var(--orange);
+  border-radius: 17px;
+  background: #fff6ed;
+  color: #566071;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.notice strong {
+  color: var(--ink);
+}
+
+.modal .primary-button {
+  min-height: 70px;
+  margin-top: 23px;
+  font-size: 21px;
+}
+
+/* ANIMACIONES */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* AJUSTES PARA CELULARES */
+
+@media (max-width: 520px) {
+
+  .page {
+    width: calc(100% - 28px);
+    padding-top: 17px;
+  }
+
+  .welcome-header {
+    padding: 34px 17px 29px;
+    font-size: 25px;
+  }
+
+  .welcome-content {
+    padding: 25px 21px 34px;
+  }
+
+  .welcome-description {
+    font-size: 18px;
+  }
+
+  .welcome-benefits {
+    font-size: 17px;
+  }
+
+  .welcome-text {
+    font-size: 17px;
+    margin: 26px 0 37px;
+  }
+
+  .primary-button {
+    min-height: 62px;
+    font-size: 19px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .lead {
+    font-size: 17px;
+  }
+
+  .sublead {
+    font-size: 16px;
+  }
+
+  .activity {
+    padding: 13px;
+    gap: 8px;
+    margin: 25px 0;
+  }
+
+  .activity p {
+    font-size: 14px;
+  }
+
+  .activity-pill {
+    font-size: 10px;
+    padding: 7px 8px;
+  }
+
+  .quiz-card {
+    padding: 24px 19px;
+    border-radius: 35px;
+  }
+
+  .quiz-card h2 {
+    font-size: 23px;
+  }
+
+  .option {
+    min-height: 65px;
+    font-size: 17px;
+    padding: 11px 14px;
+  }
+
+  .modal {
+    padding: 28px 18px 23px;
+    border-radius: 32px;
+  }
+
+  .modal h2 {
+    font-size: 32px;
+  }
+
+  .result-copy {
+    font-size: 17px;
+  }
+
+  .result-benefit {
+    font-size: 16px;
+  }
+
+  .notice {
+    font-size: 14px;
+  }
+
+  .modal .primary-button {
+    min-height: 65px;
+    font-size: 19px;
   }
 
 }
