@@ -381,6 +381,11 @@ const actividadEjemplo = [
   { nombre: "Juan José", tiempo: "30 min" },
   { nombre: "Viviana", tiempo: "12 min" },
   { nombre: "Jenifer", tiempo: "2 horas" },
+  { nombre: "Gabriel", tiempo: "4 min" },
+  { nombre: "Estefany", tiempo: "25 min" },
+  { nombre: "michel", tiempo: "4 horas" },
+  { nombre: "karla", tiempo: "17 min" },
+  { nombre: "margarita", tiempo: "3 horas" },
   { nombre: "Sergio", tiempo: "18 min" }
 ];
 
