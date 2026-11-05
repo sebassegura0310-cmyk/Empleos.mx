@@ -370,9 +370,8 @@ document
    INICIAR
 ===================================== */
 
-renderStep();
-
 }
+
 // NOMBRES Y TIEMPOS DE EJEMPLO
 const actividadEjemplo = [
   { nombre: "Ana", tiempo: "15 min" },
