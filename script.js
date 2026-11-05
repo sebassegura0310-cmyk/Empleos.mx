@@ -408,3 +408,46 @@ if (nombreElemento) {
 
   }, 4000);
 }
+
+// NOMBRES Y TIEMPOS DE EJEMPLO
+const actividadEjemplo = [
+  { nombre: "Ana", tiempo: "15 min" },
+  { nombre: "Diana", tiempo: "8 min" },
+  { nombre: "Vanessa", tiempo: "22 min" },
+  { nombre: "Karol", tiempo: "5 min" },
+  { nombre: "Miguel", tiempo: "1 hora" },
+  { nombre: "Juan José", tiempo: "30 min" },
+  { nombre: "Viviana", tiempo: "12 min" },
+  { nombre: "Jenifer", tiempo: "2 horas" },
+  { nombre: "Sergio", tiempo: "18 min" }
+];
+
+const nombreElemento = document.getElementById("activityName");
+const tiempoElemento = document.getElementById("activityTime");
+
+if (nombreElemento && tiempoElemento) {
+
+  let indice = 0;
+
+  setInterval(() => {
+
+    nombreElemento.style.opacity = "0";
+    tiempoElemento.style.opacity = "0";
+
+    setTimeout(() => {
+
+      indice = (indice + 1) % actividadEjemplo.length;
+
+      nombreElemento.textContent =
+        actividadEjemplo[indice].nombre;
+
+      tiempoElemento.textContent =
+        actividadEjemplo[indice].tiempo;
+
+      nombreElemento.style.opacity = "1";
+      tiempoElemento.style.opacity = "1";
+
+    }, 300);
+
+  }, 4000);
+}
