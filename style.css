@@ -1228,7 +1228,7 @@ button {
   min-width: 13px;
   background: #27bd70;
   border-radius: 50%;
-  animation: parpadeo 1.5s infinite;
+  animation: parpadeo 2.2s infinite;
 }
 
 @keyframes parpadeo {
