@@ -1252,7 +1252,7 @@ button {
 #activityName {
   color: #f07820;
   display: inline-block;
-  transition: opacity 0.3s ease;
+  transition: opacity 1.5s ease;
 }
 
 #activityName.cambiando {
