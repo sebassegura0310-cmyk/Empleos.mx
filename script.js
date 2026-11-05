@@ -370,7 +370,6 @@ document
    INICIAR
 ===================================== */
 
-}
 
 // NOMBRES Y TIEMPOS DE EJEMPLO
 const actividadEjemplo = [
