@@ -371,3 +371,40 @@ document
 ===================================== */
 
 renderStep();
+
+// NOMBRES DE EJEMPLO ROTATIVOS
+const nombresEjemplo = [
+  "Ana",
+  "Diana",
+  "Vanessa",
+  "Karol",
+  "Miguel",
+  "Juan José",
+  "Viviana",
+  "Jenifer",
+  "Sergio"
+];
+
+const nombreElemento = document.getElementById("activityName");
+
+if (nombreElemento) {
+  let indiceNombre = 0;
+
+  setInterval(() => {
+
+    nombreElemento.classList.add("cambiando");
+
+    setTimeout(() => {
+
+      indiceNombre =
+        (indiceNombre + 1) % nombresEjemplo.length;
+
+      nombreElemento.textContent =
+        nombresEjemplo[indiceNombre];
+
+      nombreElemento.classList.remove("cambiando");
+
+    }, 300);
+
+  }, 4000);
+}
