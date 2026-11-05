@@ -415,3 +415,28 @@ if (nombreElemento && tiempoElemento) {
   }, 4000);
 }
 
+// CORREGIR BOTÓN CONTINUAR
+(function () {
+
+  const boton = document.getElementById("continueButton");
+  const bienvenida = document.getElementById("welcomeScreen");
+  const cuestionario = document.getElementById("quizScreen");
+
+  if (!boton || !bienvenida || !cuestionario) {
+    console.error("No se encontraron los elementos de bienvenida");
+    return;
+  }
+
+  boton.addEventListener("click", function () {
+
+    bienvenida.hidden = true;
+    cuestionario.hidden = false;
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  });
+
+})();
