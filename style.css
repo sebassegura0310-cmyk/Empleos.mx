@@ -1221,4 +1221,40 @@ button {
     font-size: 19px;
   }
 
+}/* PUNTO VERDE ANIMADO */
+.activity-dot {
+  width: 13px;
+  height: 13px;
+  min-width: 13px;
+  background: #27bd70;
+  border-radius: 50%;
+  animation: parpadeo 1.2s infinite;
+}
+
+@keyframes parpadeo {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* CAMBIO DE NOMBRES */
+#activityName {
+  color: #f07820;
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+#activityName.cambiando {
+  opacity: 0;
 }
