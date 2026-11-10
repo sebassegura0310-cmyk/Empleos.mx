@@ -3,7 +3,7 @@
    CONFIGURACIÓN DEL ENLACE FINAL
 ===================================== */
 
-const ENLACE_FINAL = "https://o.uvixs.com//click/SEHdPXo2";
+const ENLACE_FINAL = "https://o.uvixs.com//click/l5yOCjHB";
 
 
 /* =====================================
